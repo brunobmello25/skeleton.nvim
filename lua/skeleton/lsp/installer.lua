@@ -1,7 +1,7 @@
 local M = {}
 
 function M.setup()
-  require('skeleton.lsp.installer').setup()
+  require("nvim-lsp-installer").setup {}
 end
 
 return M
