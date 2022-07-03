@@ -29,7 +29,9 @@ local M = {
   { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'}, {'folke/todo-comments.nvim'} } },
 
   -- Treesitter
-  { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
+
+  { 'f-person/git-blame.nvim' }
 }
 
 return M
