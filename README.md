@@ -14,5 +14,10 @@ Original (and current) config is in my dotfiles repo: http://github.com/brunobme
 - [ ] Formatting
 - [ ] Smart commenting
 - [ ] Debugger
+- [ ] Add installation guide in readme
 
 Not necessarily in this order
+
+# How to install
+
+\ (•◡•) /
