@@ -1,19 +1,23 @@
-local utils = require("skeleton.utils")
+local fs = require('skeleton.utils.fs')
+local core = require('skeleton.core')
 
 local M = {}
 
 function M.setup(plugins)
-    local install_path = utils.join_paths(vim.fn.stdpath("data"), "site", "pack", "packer", "start", "packer.nvim")
-    local package_root = utils.join_paths(vim.fn.stdpath("data"), "site", "pack")
+    local install_path = fs.join_paths(vim.fn.stdpath("data"), "site", "pack", "packer", "start", "packer.nvim")
+    local compile_path = fs.join_paths(vim.fn.stdpath("data"), "site", "pack", "packer", "start", "packer.nvim",
+    "compiled", "packer_compiled.lua")
+    local package_root = fs.join_paths(vim.fn.stdpath("data"), "site", "pack")
 
     local init_opts = {
         package_root = package_root,
+        compile_path = compile_path,
         git = {
             clone_timeout = 300
         }
     }
 
-    if not utils.is_directory(install_path) then
+    if not fs.is_directory(install_path) then
         vim.fn.system({"git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim", install_path})
         vim.cmd("packadd packer.nvim")
     end
@@ -32,7 +36,11 @@ function M.setup(plugins)
         end
     end)
 
-    packer.sync()
+    local created, _ = core.cron_add("packer:sync", "1w")
+    local to_update, _ = core.cron_update("packer:sync")
+    if to_update or created then
+      packer.sync()
+    end
 end
 
 return M

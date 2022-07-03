@@ -31,7 +31,26 @@ local M = {
   -- Treesitter
   { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
 
-  { 'f-person/git-blame.nvim' }
+  -- Git Blame
+  { 'f-person/git-blame.nvim' },
+
+  -- Harpoon
+  { 'ThePrimeagen/harpoon', requires = { 'nvim-lua/plenary.nvim' } },
+
+  -- Autoclose pairs
+  { 'jiangmiao/auto-pairs' },
+
+  -- autorun :noh when cursor moves
+  { 'romainl/vim-cool' },
+
+  -- Autorename and autoclose tags using treesitter
+  { 'windwp/nvim-ts-autotag' },
+
+  -- React plugins
+  { 'styled-components/vim-styled-components' },
+
+  -- Smooth scroll with ctrl+d/u
+  { 'psliwka/vim-smoothie' }
 }
 
 return M
