@@ -7,12 +7,12 @@ Original (and current) config is in my dotfiles repo: http://github.com/brunobme
 ## TODO
 
 - [x] Setup packer autoclone and sync
-- [ ] Prevent packer from syncing every time I open neovim
-- [ ] Basic keymaps and colorscheme (catppuccin)
-- [ ] Fuzzy finder for files and grep with telescope
+- [x] Prevent packer from syncing every time I open neovim
+- [x] Basic keymaps and colorscheme (catppuccin)
+- [x] Fuzzy finder for files and grep with telescope
 - [ ] LSP and autocompletion
 - [ ] Formatting
-- [ ] Smart commenting
+- [x] Smart commenting
 - [ ] Debugger
 - [ ] Add installation guide in readme
 
