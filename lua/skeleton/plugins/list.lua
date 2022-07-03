@@ -10,6 +10,13 @@ local M = {
   { 'hrsh7th/cmp-nvim-lsp' },
   { 'saadparwaiz1/cmp_luasnip' },
   { 'onsails/lspkind.nvim' },
+
+  -- Comments
+  { "terrortylor/nvim-comment" },
+  { "github/copilot.vim" },
+
+  -- Colorscheme
+  { "catppuccin/nvim", as = "catppuccin" },
 }
 
 return M
