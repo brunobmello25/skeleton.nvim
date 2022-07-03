@@ -1,8 +1,8 @@
 local plugin_loader = require('skeleton.plugins')
 local plugins = require('skeleton.plugins.list')
-
-local lsp = require('skeleton.lsp')
+local basics = require('skeleton.basics')
+local keymaps = require('skeleton.keymaps')
 
 plugin_loader.setup(plugins)
-
-lsp.setup()
+basics.setup()
+keymaps.setup()
