@@ -2,7 +2,7 @@
 
 My personal neovim config.
 
-Original (and current) config is in my dotfiles repo: http://github.com/brunobmello25/dotfiles
+Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello25/dotfiles
 
 ## TODO
 
@@ -14,10 +14,15 @@ Original (and current) config is in my dotfiles repo: http://github.com/brunobme
 - [x] Formatting
 - [x] Smart commenting
 - [ ] Debugger
-- [ ] Add installation guide in readme
+- [x] Add installation guide in readme
 
 Not necessarily in this order
 
 # How to install
 
-\ (•◡•) /
+```
+# backup your old configuration if you have any
+mv ~/.config/nvim ~/.config/nvim_old
+
+make install
+```
