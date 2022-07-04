@@ -11,6 +11,7 @@ function M.keymaps()
   vim.keymap.set('n', '<leader>dl', '<cmd>Telescope diagnostics<CR>', { buffer = 0 })
   vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { buffer = 0 })
   vim.keymap.set('n', '<leader>.', vim.lsp.buf.code_action, { buffer = 0 })
+  vim.keymap.set('n', '<leader>q', '<cmd>q<CR>')
 end
 
 return M
