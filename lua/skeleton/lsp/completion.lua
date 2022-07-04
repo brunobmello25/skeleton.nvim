@@ -12,7 +12,7 @@ function M.get_capabilities()
     },
     window = {
       -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(), TODO: this
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4), -- TODO: decide if I wanna keep this keymaps
