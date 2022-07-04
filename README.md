@@ -28,6 +28,6 @@ mv ~/.config/nvim ~/.config/nvim_old
 make install
 ```
 
-# Know Issues
+# Known Issues
 
 - after cloning and installing vim will crash on the first open. To fix this, simply wait for packer to sync all plugins, close and open vim again and it will be working normally
