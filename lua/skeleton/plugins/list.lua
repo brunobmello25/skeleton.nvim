@@ -51,7 +51,10 @@ local M = {
   { 'styled-components/vim-styled-components' },
 
   -- Smooth scroll with ctrl+d/u
-  { 'psliwka/vim-smoothie' }
+  { 'psliwka/vim-smoothie' },
+
+  -- Formatting engine
+  { 'sbdchd/neoformat' }
 }
 
 return M
