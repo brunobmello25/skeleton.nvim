@@ -15,6 +15,7 @@ Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello2
 - [x] Smart commenting
 - [ ] Debugger
 - [x] Add installation guide in readme
+- [ ] Git integration
 
 Not necessarily in this order
 
