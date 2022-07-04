@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup()
   local lspconfig = require('lspconfig')
-  local basics = require('skeleton.lsp.languages.basics')
+  local basics = require('skeleton.lsp.keymaps')
 
   lspconfig.sumneko_lua.setup {
     on_attach = function()
