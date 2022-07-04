@@ -20,7 +20,7 @@ Not necessarily in this order
 
 # How to install
 
-```
+```bash
 # backup your old configuration if you have any
 mv ~/.config/nvim ~/.config/nvim_old
 
