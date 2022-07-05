@@ -54,7 +54,10 @@ local M = {
   { 'psliwka/vim-smoothie' },
 
   -- Formatting engine
-  { 'sbdchd/neoformat' }
+  { 'sbdchd/neoformat' },
+
+  -- used for git signs
+  { 'mhinz/vim-signify' }
 }
 
 return M
