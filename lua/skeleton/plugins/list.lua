@@ -60,7 +60,10 @@ local M = {
   { 'mhinz/vim-signify' },
 
   -- change surrounding with cs command
-  { 'tpope/vim-surround' }
+  { 'tpope/vim-surround' },
+
+  -- Debugging
+  { 'mfussenegger/nvim-dap' }
 }
 
 return M
