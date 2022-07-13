@@ -57,7 +57,10 @@ local M = {
   { 'sbdchd/neoformat' },
 
   -- used for git signs
-  { 'mhinz/vim-signify' }
+  { 'mhinz/vim-signify' },
+
+  -- change surrounding with cs command
+  { 'tpope/vim-surround' }
 }
 
 return M
