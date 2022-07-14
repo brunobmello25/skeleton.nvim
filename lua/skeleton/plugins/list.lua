@@ -27,7 +27,7 @@ local M = {
   { 'unblevable/quick-scope' },
 
   -- Fuzzy Finder
-  { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'}, {'folke/todo-comments.nvim'} } },
+  { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' }, { 'folke/todo-comments.nvim' } } },
 
   -- Treesitter
   { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
@@ -63,7 +63,10 @@ local M = {
   { 'tpope/vim-surround' },
 
   -- Debugging
-  { 'mfussenegger/nvim-dap' }
+  { 'mfussenegger/nvim-dap' }, -- base debug config
+  { 'rcarriga/nvim-dap-ui' }, -- better debugging UI
+  { 'Pocco81/dap-buddy.nvim' }, -- auto install debugging servers
+  { 'leoluz/nvim-dap-go' }, -- debugger plugin for golang
 }
 
 return M
