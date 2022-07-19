@@ -32,9 +32,6 @@ local M = {
   -- Treesitter
   { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
 
-  -- Git Blame
-  { 'f-person/git-blame.nvim' },
-
   -- Harpoon
   { 'ThePrimeagen/harpoon', requires = { 'nvim-lua/plenary.nvim' } },
 
@@ -67,6 +64,10 @@ local M = {
   { 'rcarriga/nvim-dap-ui' }, -- better debugging UI
   { 'Pocco81/dap-buddy.nvim' }, -- auto install debugging servers
   { 'leoluz/nvim-dap-go' }, -- debugger plugin for golang
+
+  -- Git
+  { 'tpope/vim-fugitive' },
+  { 'f-person/git-blame.nvim' },
 }
 
 return M
