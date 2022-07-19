@@ -42,6 +42,7 @@ function M.setup()
   })
 
   vim.keymap.set('n', '<leader>w', '<C-w>')
+  vim.keymap.set('n', '<leader>q', '<cmd>q<CR>')
 end
 
 return M
