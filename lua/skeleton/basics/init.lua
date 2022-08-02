@@ -11,6 +11,7 @@ function M.setup()
   vim.opt.wrap = false
   vim.opt.ignorecase = true
   vim.cmd('filetype plugin indent on')
+  vim.cmd('set splitbelow splitright')
 end
 
 return M
