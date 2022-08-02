@@ -29,5 +29,21 @@ function M.setup()
   }
 end
 
-return M
+function EslintConfigExists()
+  local root_dir = vim.fn.expand('%:p:h')
 
+  local eslint_config_files = {
+    'eslintrc.js',
+    'eslintrc.json',
+  }
+
+  for _, file in ipairs(eslint_config_files) do
+    if vim.fn.exists(root_dir .. '/' .. file) then
+      return true
+    end
+  end
+
+  return false
+end
+
+return M
