@@ -8,6 +8,7 @@ function M.setup()
   require('skeleton.lsp.languages.ruby').setup()
   require('skeleton.lsp.languages.typescript').setup()
   require('skeleton.lsp.languages.bash').setup()
+  require('skeleton.lsp.languages.json').setup()
 end
 
 return M
