@@ -68,6 +68,7 @@ local M = {
   -- Git
   { 'tpope/vim-fugitive' },
   { 'f-person/git-blame.nvim' },
+  { 'akinsho/git-conflict.nvim' }
 }
 
 return M
