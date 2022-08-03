@@ -7,6 +7,7 @@ function M.setup()
   lspconfig.tsserver.setup {
     on_attach = function()
       keymaps.setup()
+      vim.keymap.set('n', '<leader>p', '<cmd>Neoformat prettier<cr>', { buffer = 0 })
     end,
     capabilities = require('skeleton.lsp.completion').get_capabilities(),
   }
