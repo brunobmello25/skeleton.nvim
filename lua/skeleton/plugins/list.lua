@@ -36,7 +36,7 @@ local M = {
   { 'ThePrimeagen/harpoon', requires = { 'nvim-lua/plenary.nvim' } },
 
   -- Autoclose pairs
-  { 'jiangmiao/auto-pairs' },
+  { "windwp/nvim-autopairs" },
 
   -- autorun :noh when cursor moves
   { 'romainl/vim-cool' },
