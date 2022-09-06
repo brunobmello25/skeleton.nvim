@@ -9,6 +9,7 @@ function M.setup()
   require('skeleton.lsp.languages.typescript').setup()
   require('skeleton.lsp.languages.bash').setup()
   require('skeleton.lsp.languages.json').setup()
+  require('skeleton.lsp.languages.python').setup()
 end
 
 return M
