@@ -10,6 +10,7 @@ function M.setup()
   require('skeleton.lsp.languages.bash').setup()
   require('skeleton.lsp.languages.json').setup()
   require('skeleton.lsp.languages.python').setup()
+  require('skeleton.lsp.languages.java').setup()
 end
 
 return M
