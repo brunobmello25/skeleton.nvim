@@ -11,6 +11,7 @@ function M.setup()
   require('skeleton.lsp.languages.json').setup()
   require('skeleton.lsp.languages.python').setup()
   require('skeleton.lsp.languages.java').setup()
+  require('skeleton.lsp.languages.efm').setup()
 end
 
 return M
