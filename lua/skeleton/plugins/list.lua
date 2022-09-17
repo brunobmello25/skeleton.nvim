@@ -68,7 +68,14 @@ local M = {
   -- Git
   { 'tpope/vim-fugitive' },
   { 'f-person/git-blame.nvim' },
-  { 'akinsho/git-conflict.nvim' }
+  { 'akinsho/git-conflict.nvim' },
+
+  -- neoclip - registers manager like a clipboard manager
+  { "AckslD/nvim-neoclip.lua",
+    requires = {
+      { 'nvim-telescope/telescope.nvim' },
+    }
+  }
 }
 
 return M
