@@ -16,7 +16,7 @@ function M.setup()
     on_attach = function(client)
       keymaps.setup()
 
-      client.resolved_capabilities.document_formatting = true
+      client.server_capabilities.document_formatting = true
 
       local autogroup_eslint_lsp = vim.api.nvim_create_augroup("eslint_lsp", { clear = true })
 
