@@ -5,11 +5,11 @@ function M.setup()
   local keymaps = require('skeleton.lsp.keymaps')
 
   lspconfig.jdtls.setup {
-    -- on_attach = function()
-    --   keymaps.setup()
-    --   vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
-    -- end,
-    -- capabilities = require('skeleton.lsp.completion').get_capabilities(),
+    on_attach = function()
+      keymaps.setup()
+      vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
+    end,
+    capabilities = require('skeleton.lsp.completion').get_capabilities(),
   }
 end
 
