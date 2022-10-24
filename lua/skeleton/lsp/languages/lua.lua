@@ -10,6 +10,13 @@ function M.setup()
       vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]])
     end,
     capabilities = require('skeleton.lsp.completion').get_capabilities(),
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = { 'vim' },
+        },
+      }
+    }
   }
 end
 
