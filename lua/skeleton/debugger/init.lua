@@ -14,6 +14,7 @@ function M.setup()
   vim.keymap.set('n', '<leader>B', "<cmd>lua require('dapui').toggle()<CR>")
 
   languages.golang.setup()
+  languages.node.setup()
 end
 
 return M
