@@ -75,7 +75,10 @@ local M = {
     requires = {
       { 'nvim-telescope/telescope.nvim' },
     }
-  }
+  },
+
+  -- Package manager (used to install debugger client)
+  { "williamboman/mason.nvim" }
 }
 
 return M
