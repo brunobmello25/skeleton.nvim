@@ -82,7 +82,16 @@ local M = {
   { "williamboman/mason.nvim" },
 
   -- Resize windows directionally based on the divider
-  { 'mrjones2014/smart-splits.nvim' }
+  { 'mrjones2014/smart-splits.nvim' },
+
+  -- File explorer
+  {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 }
 
 return M
