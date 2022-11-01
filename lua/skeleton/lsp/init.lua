@@ -12,6 +12,7 @@ function M.setup()
   require('skeleton.lsp.languages.python').setup()
   require('skeleton.lsp.languages.java').setup()
   require('skeleton.lsp.languages.efm').setup()
+  require('skeleton.lsp.languages.prisma').setup()
 end
 
 return M
