@@ -64,6 +64,7 @@ local M = {
   { 'rcarriga/nvim-dap-ui' }, -- better debugging UI
   { 'Pocco81/dap-buddy.nvim' }, -- auto install debugging servers
   { 'leoluz/nvim-dap-go' }, -- debugger plugin for golang
+  { 'theHamsta/nvim-dap-virtual-text' },
 
   -- Git
   { 'tpope/vim-fugitive' },
