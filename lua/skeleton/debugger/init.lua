@@ -10,9 +10,11 @@ function M.setup()
   vim.keymap.set('n', '<F11>', "<cmd>lua require('dap').step_over()<CR>")
   vim.keymap.set('n', '<F12>', "<cmd>lua require('dap').step_out()<CR>")
   vim.keymap.set('n', '<leader>b', "<cmd>lua require('dap').toggle_breakpoint()<CR>")
+  vim.keymap.set('n', '<leader>B', "<cmd>lua require('dap').set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+
 
   dapui.setup()
-  vim.keymap.set('n', '<leader>B', "<cmd>lua require('dapui').toggle()<CR>")
+  vim.keymap.set('n', '<leader>dt', "<cmd>lua require('dapui').toggle()<CR>")
 
   nvim_dap_virtual_text.setup()
 
