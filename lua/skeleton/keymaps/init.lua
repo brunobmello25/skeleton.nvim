@@ -11,7 +11,7 @@ function M.setup()
     noremap = true
   })
 
-  -- move lines up and down
+
   vim.api.nvim_set_keymap('n', '<A-j>', ':m+<CR>==', {
     noremap = true
   })
@@ -40,12 +40,6 @@ function M.setup()
   vim.api.nvim_set_keymap('n', '<leader>e', ':Ex <CR>', {
     noremap = true
   })
-
-  -- navigate between panes
-  vim.keymap.set('n', '<C-h>', '<C-w>h')
-  vim.keymap.set('n', '<C-j>', '<C-w>j')
-  vim.keymap.set('n', '<C-k>', '<C-w>k')
-  vim.keymap.set('n', '<C-l>', '<C-w>l')
 
   vim.keymap.set('n', '<leader>q', '<cmd>q<CR>')
 end

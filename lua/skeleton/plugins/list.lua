@@ -79,7 +79,10 @@ local M = {
   },
 
   -- Package manager (used to install debugger client)
-  { "williamboman/mason.nvim" }
+  { "williamboman/mason.nvim" },
+
+  -- Resize windows directionally based on the divider
+  { 'mrjones2014/smart-splits.nvim' }
 }
 
 return M
