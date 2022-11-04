@@ -8,7 +8,14 @@ function M.setup()
     command = 'node',
     args = { os.getenv('HOME') .. '/.local/share/nvim/mason/packages/node-debug2-adapter/out/src/nodeDebug.js' },
   }
-  dap.configurations.javascript = {
+
+  dap.adapters.chrome = {
+    type = 'executable',
+    command = 'node',
+    args = { os.getenv('HOME') .. '/.local/share/nvim/mason/packages/vscode-chrome-debug/out/src/chromeDebug.js' },
+  }
+
+  local config = {
     {
       name = 'Launch',
       type = 'node2',
@@ -24,9 +31,17 @@ function M.setup()
       name = 'Attach to process',
       type = 'node2',
       request = 'attach',
-      processId = require 'dap.utils'.pick_process,
+      program = "${file}",
+      cwd = vim.fn.getcwd(),
+      port = 9229,
+      souceMaps = true,
+      protocol = 'inspector',
+      webRoot = '${workspaceFolder}',
     },
   }
+
+  dap.configurations.javascript = config
+  dap.configurations.typescript = config
 end
 
 return M
