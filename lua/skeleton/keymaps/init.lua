@@ -37,9 +37,9 @@ function M.setup()
   vim.cmd('command! CopyRelPath call setreg(\'+\', expand(\'%\'))')
 
   -- open explorer
-  vim.api.nvim_set_keymap('n', '<leader>e', ':Ex <CR>', {
-    noremap = true
-  })
+  -- vim.api.nvim_set_keymap('n', '<leader>e', ':Ex <CR>', {
+  --   noremap = true
+  -- })
 
   vim.keymap.set('n', '<leader>q', '<cmd>q<CR>')
 end
