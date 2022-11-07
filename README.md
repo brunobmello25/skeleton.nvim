@@ -13,10 +13,10 @@ Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello2
 - [x] LSP and autocompletion
 - [x] Formatting
 - [x] Smart commenting
-- [ ] Debugger
+- [x] Debugger
 - [x] Add installation guide in readme
 - [x] Git integration
-- [ ] Configure prettier as a fallback for when there is no eslint config
+- [x] Configure prettier as a fallback for when there is no eslint config
 
 Not necessarily in this order
 
