@@ -6,7 +6,11 @@ function M.setup()
 
   vim.opt.termguicolors = true
 
-  require('nvim-tree').setup()
+  require('nvim-tree').setup({
+    view = {
+      adaptive_size = true,
+    }
+  })
 
   vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
     noremap = true
