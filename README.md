@@ -17,6 +17,7 @@ Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello2
 - [x] Add installation guide in readme
 - [x] Git integration
 - [x] Configure prettier as a fallback for when there is no eslint config
+- [ ] configure node debugger to attach to a docker container
 
 Not necessarily in this order
 
