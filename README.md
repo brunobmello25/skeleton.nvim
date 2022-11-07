@@ -34,7 +34,7 @@ make install
 
 - after cloning and installing vim will crash on the first open. To fix this, simply wait for packer to sync all plugins, close and open vim again and it will be working normally
 
-# Manual Requirements
+# Mason Requirements (run :Mason)
 
-- efm langserver (sudo apt install efm-langserver)
-- black-macchiato (pip install black-macchiato) (python formatter)
+- efm (langserver used for eslint)
+- black (python formatter)
