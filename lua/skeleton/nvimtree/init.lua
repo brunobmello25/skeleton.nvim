@@ -7,12 +7,13 @@ function M.setup()
   vim.opt.termguicolors = true
 
   require('nvim-tree').setup({
+    respect_buf_cwd = true,
     view = {
       adaptive_size = true,
     }
   })
 
-  vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', {
+  vim.keymap.set('n', '<leader>e', ':NvimTreeFindFileToggle<CR>', {
     noremap = true
   })
 end
