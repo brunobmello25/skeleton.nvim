@@ -64,11 +64,13 @@ local M = {
   { 'theHamsta/nvim-dap-virtual-text' },
 
   -- Git
+  { 'nvim-tree/nvim-web-devicons' },
   { 'tpope/vim-fugitive' },
   { 'f-person/git-blame.nvim' },
   { 'akinsho/git-conflict.nvim' },
   { 'sindrets/diffview.nvim', requires = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' } },
   { 'mhinz/vim-signify' }, -- git signs
+  { 'TimUntersberger/neogit' },
 
   -- neoclip - registers manager like a clipboard manager
   { "AckslD/nvim-neoclip.lua",
