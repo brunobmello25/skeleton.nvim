@@ -13,10 +13,11 @@ Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello2
 - [x] LSP and autocompletion
 - [x] Formatting
 - [x] Smart commenting
-- [ ] Debugger
+- [x] Debugger
 - [x] Add installation guide in readme
 - [x] Git integration
-- [ ] Configure prettier as a fallback for when there is no eslint config
+- [x] Configure prettier as a fallback for when there is no eslint config
+- [ ] configure node debugger to attach to a docker container
 
 Not necessarily in this order
 
@@ -33,7 +34,7 @@ make install
 
 - after cloning and installing vim will crash on the first open. To fix this, simply wait for packer to sync all plugins, close and open vim again and it will be working normally
 
-# Manual Requirements
+# Mason Requirements (run :Mason)
 
-- efm langserver (sudo apt install efm-langserver)
-- black-macchiato (pip install black-macchiato) (python formatter)
+- efm (langserver used for eslint)
+- black (python formatter)
