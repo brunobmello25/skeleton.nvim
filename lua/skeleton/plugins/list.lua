@@ -53,9 +53,6 @@ local M = {
   -- Formatting engine
   { 'sbdchd/neoformat' },
 
-  -- used for git signs
-  { 'mhinz/vim-signify' },
-
   -- change surrounding with cs command
   { 'tpope/vim-surround' },
 
@@ -70,6 +67,8 @@ local M = {
   { 'tpope/vim-fugitive' },
   { 'f-person/git-blame.nvim' },
   { 'akinsho/git-conflict.nvim' },
+  { 'sindrets/diffview.nvim', requires = { 'nvim-lua/plenary.nvim', 'nvim-tree/nvim-web-devicons' } },
+  { 'mhinz/vim-signify' }, -- git signs
 
   -- neoclip - registers manager like a clipboard manager
   { "AckslD/nvim-neoclip.lua",
