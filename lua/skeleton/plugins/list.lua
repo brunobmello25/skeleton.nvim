@@ -16,6 +16,7 @@ local M = {
   -- Comments
   { "terrortylor/nvim-comment" },
   { "github/copilot.vim" },
+  { "JoosepAlviste/nvim-ts-context-commentstring" },
 
   -- Colorscheme
   { "catppuccin/nvim", as = "catppuccin" },
