@@ -1,5 +1,12 @@
 local plugin_loader = require('skeleton.plugins')
 local plugins = require('skeleton.plugins.list')
+
+local is_bootstraped = plugin_loader.setup(plugins)
+
+if is_bootstraped then
+  return
+end
+
 local basics = require('skeleton.basics')
 local keymaps = require('skeleton.keymaps')
 local nvimtree = require('skeleton.nvimtree')
@@ -22,7 +29,6 @@ local mason = require('skeleton.mason')
 local smartsplits = require('skeleton.smartsplits')
 local icons = require('skeleton.icons')
 
-plugin_loader.setup(plugins)
 treesitter.setup()
 quickscope.setup()
 basics.setup()
