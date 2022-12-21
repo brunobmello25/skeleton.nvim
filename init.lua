@@ -1,9 +1,11 @@
 local plugin_loader = require('skeleton.plugins')
 local plugins = require('skeleton.plugins.list')
 
-local is_bootstraped = plugin_loader.setup(plugins)
+plugin_loader.setup(plugins)
 
-if is_bootstraped then
+if plugin_loader.is_bootstrap then
+  plugin_loader.print_bootstrap_warn_message()
+
   return
 end
 
