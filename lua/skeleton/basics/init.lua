@@ -12,6 +12,7 @@ function M.setup()
   vim.opt.ignorecase = true
   vim.cmd('filetype plugin indent on')
   vim.cmd('set splitbelow splitright')
+  vim.opt.incsearch = true
 end
 
 return M
