@@ -29,7 +29,6 @@ local M = {
   { 'hrsh7th/cmp-path' },
   { 'hrsh7th/cmp-nvim-lua' },
   { 'onsails/lspkind.nvim' },
-  { 'williamboman/nvim-lsp-installer', requires = { { 'neovim/nvim-lspconfig' } } },
   { 'saadparwaiz1/cmp_luasnip' },
   { 'L3MON4D3/LuaSnip' },
 
