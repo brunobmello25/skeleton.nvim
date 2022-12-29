@@ -2,8 +2,6 @@
 
 My personal neovim config.
 
-Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello25/dotfiles
-
 ## TODO
 
 - [x] Setup packer autoclone and sync
