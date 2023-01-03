@@ -13,9 +13,11 @@ Because I named it after I looked to a skull that I have on my shelve and though
 
 # How to install
 
-```bash
-# backup your old configuration if you have any
-mv ~/.config/nvim ~/.config/nvim_old
+Run the following command
 
-make install
+```bash
+git clone git@github.com:brunobmello25/skeleton.nvim.git && \
+cd skeleton.nvim && \
+chmod +x ./install.sh && \
+./install.sh
 ```
