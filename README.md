@@ -2,24 +2,14 @@
 
 My personal neovim config.
 
-Old and deprecated config is in my dotfiles repo: http://github.com/brunobmello25/dotfiles
+"Why skeleton?"
+
+Because I named it after I looked to a skull that I have on my shelve and thought it sounded cool.
 
 ## TODO
 
-- [x] Setup packer autoclone and sync
-- [x] Prevent packer from syncing every time I open neovim
-- [x] Basic keymaps and colorscheme (catppuccin)
-- [x] Fuzzy finder for files and grep with telescope
-- [x] LSP and autocompletion
-- [x] Formatting
-- [x] Smart commenting
-- [x] Debugger
-- [x] Add installation guide in readme
-- [x] Git integration
-- [x] Configure prettier as a fallback for when there is no eslint config
+- [ ] Configure mason to recognize lsp by filetype and suggest autoinstall
 - [ ] configure node debugger to attach to a docker container
-
-Not necessarily in this order
 
 # How to install
 
@@ -29,12 +19,3 @@ mv ~/.config/nvim ~/.config/nvim_old
 
 make install
 ```
-
-# Known Issues
-
-- after cloning and installing vim will crash on the first open. To fix this, simply wait for packer to sync all plugins, close and open vim again and it will be working normally
-
-# Mason Requirements (run :Mason)
-
-- efm (langserver used for eslint)
-- black (python formatter)
