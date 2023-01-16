@@ -34,6 +34,9 @@ function M.setup()
     vim.api.nvim_set_keymap('n', '<leader>hh', "<cmd>lua require('harpoon.ui').toggle_quick_menu()<CR>", {
         noremap = true
     })
+
+    -- print hello
+    print('Hello from harpoon.lua')
 end
 
 return M
