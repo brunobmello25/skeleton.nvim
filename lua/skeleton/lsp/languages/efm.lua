@@ -2,11 +2,11 @@ local M = {}
 
 function M.setup()
   local lspconfig = require('lspconfig')
-  local keymaps = require('skeleton.lsp.keymaps')
+  local general = require('skeleton.lsp.languages.general')
 
   lspconfig.efm.setup {
     on_attach = function()
-      keymaps.setup()
+      general.set_keymaps()
     end,
     flags = {
       debounce_text_changes = 150,

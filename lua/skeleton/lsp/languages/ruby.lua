@@ -2,13 +2,13 @@ local M = {}
 
 function M.setup()
   local lspconfig = require('lspconfig')
-  local keymaps = require('skeleton.lsp.keymaps')
+  local general = require('skeleton.lsp.languages.general')
 
   lspconfig.solargraph.setup {
     on_attach = function()
-      keymaps.setup()
+      general.set_keymaps()
     end,
-    capabilities = require('skeleton.lsp.completion').get_capabilities(),
+    capabilities = require('skeleton.lsp.languages.general').capabilities,
   }
 end
 

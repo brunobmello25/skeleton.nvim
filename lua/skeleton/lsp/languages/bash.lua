@@ -1,15 +1,14 @@
 local M = {}
+local lspconfig = require('lspconfig')
+local general = require('skeleton.lsp.languages.general')
 
 function M.setup()
-  local lspconfig = require('lspconfig')
-  local keymaps = require('skeleton.lsp.keymaps')
-
   lspconfig.bashls.setup {
     on_attach = function()
-      keymaps.setup()
+      general.set_keymaps()
       vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
     end,
-    capabilities = require('skeleton.lsp.completion').get_capabilities(),
+    capabilities = require('skeleton.lsp.languages.general').capabilities,
   }
 end
 

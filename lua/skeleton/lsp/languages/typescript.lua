@@ -2,19 +2,22 @@ local M = {}
 
 function M.setup()
   local lspconfig = require('lspconfig')
-  local keymaps = require('skeleton.lsp.keymaps')
+  local general = require('skeleton.lsp.languages.general')
 
   lspconfig.tsserver.setup {
     on_attach = function()
-      keymaps.setup()
+      general.set_keymaps()
       vim.keymap.set('n', '<leader>p', '<cmd>Neoformat prettier<cr>', { buffer = 0 })
     end,
-    capabilities = require('skeleton.lsp.completion').get_capabilities(),
+    capabilities = require('skeleton.lsp.languages.general').capabilities,
+    flags = {
+      allow_incremental_sync = true,
+    },
   }
 
   lspconfig.eslint.setup {
     on_attach = function(client)
-      keymaps.setup()
+      -- general.set_keymaps()
 
       client.server_capabilities.document_formatting = true
 
@@ -26,7 +29,7 @@ function M.setup()
         group = autogroup_eslint_lsp,
       })
     end,
-    capabilities = require('skeleton.lsp.completion').get_capabilities(),
+    capabilities = require('skeleton.lsp.languages.general').capabilities,
   }
 end
 

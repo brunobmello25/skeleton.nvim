@@ -1,6 +1,10 @@
 local M = {}
 
 function M.setup()
+  require('skeleton.lsp.treesitter').setup()
+  require('skeleton.lsp.mason').setup()
+  require('skeleton.lsp.cmp').setup()
+
   require('skeleton.lsp.languages.golang').setup()
   require('skeleton.lsp.languages.lua').setup()
   require('skeleton.lsp.languages.ruby').setup()

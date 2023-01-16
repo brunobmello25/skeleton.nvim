@@ -1,8 +1,8 @@
 local M = {}
 
-function M.get_capabilities()
-  local cmp = require 'cmp'
+local cmp = require 'cmp'
 
+function M.setup()
   cmp.setup({
     snippet = {
       expand = function(args)
@@ -15,7 +15,7 @@ function M.get_capabilities()
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
+      ['<C-e>'] = cmp.mapping.close(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
     }),
     sources = cmp.config.sources({
@@ -25,10 +25,6 @@ function M.get_capabilities()
       { name = 'buffer' },
     })
   })
-
-  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-  return capabilities
 end
 
 return M
