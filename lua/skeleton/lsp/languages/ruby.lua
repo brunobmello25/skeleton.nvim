@@ -7,6 +7,7 @@ function M.setup()
   lspconfig.solargraph.setup {
     on_attach = function()
       general.set_keymaps()
+      general.set_formatting_autocmd()
     end,
     capabilities = require('skeleton.lsp.languages.general').capabilities,
   }
