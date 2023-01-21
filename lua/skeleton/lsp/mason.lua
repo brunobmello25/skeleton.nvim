@@ -11,7 +11,8 @@ function M.setup()
       'gopls',
       'bashls',
       'prismals',
-      'jedi_language_server'
+      'jedi_language_server',
+      'vtsls'
     },
   })
 end
