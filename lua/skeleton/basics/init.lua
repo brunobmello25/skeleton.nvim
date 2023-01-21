@@ -13,6 +13,11 @@ function M.setup()
   vim.cmd('filetype plugin indent on')
   vim.cmd('set splitbelow splitright')
   vim.opt.incsearch = true
+
+  vim.opt.foldenable = false
+  vim.opt.foldlevel = 99
+  vim.opt.fillchars = "fold: "
+  vim.opt.foldmethod = "indent"
 end
 
 return M
