@@ -7,7 +7,7 @@ function M.setup()
   lspconfig.sumneko_lua.setup {
     on_attach = function()
       general.set_keymaps()
-      vim.cmd([[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]])
+      general.set_formatting_autocmd()
     end,
     capabilities = require('skeleton.lsp.languages.general').capabilities,
     settings = {
