@@ -21,8 +21,6 @@ function M.set_formatting_autocmd()
     {
       -- command = "lua vim.lsp.buf.format()",
       callback = function()
-        print("Formatting, press any key to continue")
-        vim.fn.getchar()
         vim.lsp.buf.format()
       end,
       group = M.autoformat_group,
