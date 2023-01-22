@@ -2,33 +2,19 @@ local M = {}
 
 function M.setup()
 
-  require('neoclip').setup({
-    keys = {
-      telescope = {
-        i = {
-          select = '<cr>',
-          paste = false,
-          paste_behind = false,
-          replay = false, -- replay a macro
-          delete = '<c-d>', -- delete an entry
-          custom = {},
-        },
-        n = {
-          select = '<cr>',
-          paste = false,
-          --- It is possible to map to more than one key.
-          -- paste = { 'p', '<c-p>' },
-          paste_behind = false,
-          replay = false,
-          delete = 'd',
-          custom = {},
-        },
-      }
-    }
-  })
+  require('nvim_comment').setup({
+    operator_mapping = "<leader>/",
+    hook = function()
+      local filetype = vim.api.nvim_buf_get_option(0, "filetype")
 
-  vim.api.nvim_set_keymap('n', '<leader>fy', ":lua require('telescope').extensions.neoclip.neoclip()<CR>",
-    { noremap = true })
+      if filetype == "typescriptreact" or filetype == "javascriptreact" then
+        require("ts_context_commentstring.internal").update_commentstring({
+          key = '__multiline'
+        })
+      end
+    end
+  })
 end
 
 return M
+
