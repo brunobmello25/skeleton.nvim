@@ -36,7 +36,7 @@ local M = {
   -- Comments
   { "terrortylor/nvim-comment" },
   { "github/copilot.vim" },
-  { "JoosepAlviste/nvim-ts-context-commentstring" },
+  { "JoosepAlviste/nvim-ts-context-commentstring", requires = { 'nvim-treesitter/nvim-treesitter' } },
 
   -- Colorscheme
   { "catppuccin/nvim", as = "catppuccin" },
@@ -60,7 +60,7 @@ local M = {
   { 'romainl/vim-cool' },
 
   -- Autorename and autoclose tags using treesitter
-  { 'windwp/nvim-ts-autotag' },
+  { 'windwp/nvim-ts-autotag', requires = { 'nvim-treesitter/nvim-treesitter' } },
 
   -- React plugins
   { 'styled-components/vim-styled-components' },
