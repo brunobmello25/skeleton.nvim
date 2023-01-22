@@ -12,12 +12,7 @@ function M.setup(plugins)
     vim.cmd [[packadd packer.nvim]]
   end
 
-  local packer = require('packer')
-
-  packer.init()
-  packer.reset()
-
-  packer.startup(function(use)
+  require('packer').startup(function(use)
     for _, p in pairs(plugins) do
       use(p)
     end
