@@ -12,7 +12,7 @@ function M.setup()
       'bashls',
       'prismals',
       'jedi_language_server',
-      'vtsls'
+      -- 'vtsls' TODO: fix mason so that it supports vtsls
     },
   })
 end
