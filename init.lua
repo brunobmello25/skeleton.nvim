@@ -1,17 +1,12 @@
-local plugin_loader = require('skeleton.plugins')
-local plugins = require('skeleton.plugins.list')
+local basics = require('skeleton.basics')
+basics.setup()
 
-plugin_loader.setup(plugins)
-
-if plugin_loader.is_bootstrap then
-  plugin_loader.print_bootstrap_warn_message()
-
+local bootstraped = require('skeleton.plugins').bootstrap()
+if bootstraped then
   return
 end
 
 local movements = require('skeleton.movements')
-local basics = require('skeleton.basics')
-local keymaps = require('skeleton.keymaps')
 local colors = require('skeleton.colors')
 local lsp = require('skeleton.lsp')
 local status = require('skeleton.status')
@@ -20,8 +15,6 @@ local debugger = require('skeleton.debugger')
 local icons = require('skeleton.icons')
 local editing = require('skeleton.editing')
 
-basics.setup()
-keymaps.setup()
 lsp.setup()
 editing.setup()
 movements.setup()
