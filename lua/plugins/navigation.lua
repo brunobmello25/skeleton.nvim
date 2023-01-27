@@ -4,7 +4,7 @@ return {
     cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
     keys = {
-      { "<leader>ff", '<cmd>Telescope find_files<cr>', desc = "Find Files" },
+      { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", desc = "Find Files" },
       { "<leader>fg", '<cmd>Telescope live_grep<cr>', desc = "Live Grep" },
       { "<leader>fb", '<cmd>Telescope buffers<cr>', desc = "Buffers" },
       { "<leader>fd", '<cmd>Telescope diagnostics<cr>', desc = "Diagnostics" },
