@@ -29,7 +29,7 @@ return {
     init = function()
       vim.g.copilot_no_tab_map = true
 
-      vim.keymap.set('n', '<C-u>', 'copilot#Accept("<CR>")')
+      vim.keymap.set('i', '<C-u>', 'copilot#Accept("<CR>")')
     end,
     -- keys = {
     --   { '<C-u>', 'copilot#Accept("<CR>")', mode = "i" }
