@@ -13,7 +13,8 @@ vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
-require('config.plugins.quickscope').setup()
-require('config.plugins.nvimtree').setup()
+require('config.keymaps').setup()
+require('config.sets').setup()
 
 require("lazy").setup('plugins')
+
