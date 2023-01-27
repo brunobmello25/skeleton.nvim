@@ -107,5 +107,7 @@ return {
         vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<CR>')
       }
     end
-  }
+  },
+
+  { 'psliwka/vim-smoothie' }
 }
