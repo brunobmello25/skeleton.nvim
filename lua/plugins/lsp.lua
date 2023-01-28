@@ -61,6 +61,21 @@ return {
         vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         vim.keymap.set('n', '<leader>.', vim.lsp.buf.code_action, opts)
+
+        local name = client.name
+        local skip_format_autocmd = name == 'tsserver' or name == 'eslint' or name == 'vtsls'
+
+        if not skip_format_autocmd then
+          local group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true })
+
+          vim.api.nvim_create_autocmd("BufWritePre", { command = "LspZeroFormat", group = group })
+        end
+
+        if name == 'eslint' then
+          local group = vim.api.nvim_create_augroup('EslintFormatOnSave', { clear = true })
+
+          vim.api.nvim_create_autocmd('BufWritePre', { command = 'EslintFixAll', group = group })
+        end
       end)
 
       -- Configure lua language server for neovim
