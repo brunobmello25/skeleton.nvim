@@ -8,6 +8,7 @@ return {
       { "<leader>fg", '<cmd>Telescope live_grep<cr>', desc = "Live Grep" },
       { "<leader>fb", '<cmd>Telescope buffers<cr>', desc = "Buffers" },
       { "<leader>fd", '<cmd>Telescope diagnostics<cr>', desc = "Diagnostics" },
+      { "<leader>fq", '<cmd>Telescope quickfix<cr>', desc = "List items in the quickfix list" },
     },
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
