@@ -8,7 +8,12 @@ return {
 
   {
     'terrortylor/nvim-comment',
-    dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' },
+    dependencies = {
+      {
+        'JoosepAlviste/nvim-ts-context-commentstring',
+        dependencies = { 'nvim-treesitter/nvim-treesitter' }
+      }
+    },
     config = function()
       require('nvim_comment').setup({
         operator_mapping = "<leader>/",
@@ -32,9 +37,6 @@ return {
 
       vim.keymap.set('i', '<C-u>', 'copilot#Accept("<CR>")')
     end,
-    -- keys = {
-    --   { '<C-u>', 'copilot#Accept("<CR>")', mode = "i" }
-    -- }
   },
 
   {
@@ -70,5 +72,16 @@ return {
 
       vim.keymap.set('n', '<leader>fy', "<cmd>lua require('telescope').extensions.neoclip.neoclip()<cr>")
     end,
-  }
+  },
+
+  -- autorun :noh when cursor moves
+  { 'romainl/vim-cool' },
+
+  {
+    'windwp/nvim-ts-autotag',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end
+  },
 }

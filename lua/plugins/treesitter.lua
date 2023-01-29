@@ -12,6 +12,9 @@ return {
         indent = {
           enable = true,
         },
+        autotag = {
+          true
+        }
       })
     end
   }
