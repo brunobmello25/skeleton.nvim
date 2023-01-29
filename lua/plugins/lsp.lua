@@ -29,7 +29,6 @@ return {
       lsp.preset('recommended')
 
       lsp.ensure_installed({
-        'tsserver',
         'eslint',
         'sumneko_lua',
         'vtsls'
@@ -63,7 +62,7 @@ return {
         vim.keymap.set('n', '<leader>.', vim.lsp.buf.code_action, opts)
 
         local name = client.name
-        local skip_format_autocmd = name == 'tsserver' or name == 'eslint' or name == 'vtsls'
+        local skip_format_autocmd = name == 'eslint' or name == 'vtsls'
 
         if not skip_format_autocmd then
           local group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true })
