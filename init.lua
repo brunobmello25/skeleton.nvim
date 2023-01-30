@@ -1,25 +1,19 @@
-local basics = require('skeleton.basics')
-basics.setup()
-
-local bootstraped = require('skeleton.plugins').bootstrap()
-if bootstraped then
-  return
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
 end
+vim.opt.rtp:prepend(lazypath)
 
-local movements = require('skeleton.movements')
-local colors = require('skeleton.colors')
-local lsp = require('skeleton.lsp')
-local status = require('skeleton.status')
-local git = require('skeleton.git')
-local debugger = require('skeleton.debugger')
-local icons = require('skeleton.icons')
-local editing = require('skeleton.editing')
+vim.g.mapleader = " "
 
-lsp.setup()
-editing.setup()
-movements.setup()
-icons.setup()
-colors.setup()
-status.setup()
-git.setup()
-debugger.setup()
+require('config.keymaps').setup()
+require('config.sets').setup()
+
+require("lazy").setup('plugins')
