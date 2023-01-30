@@ -52,34 +52,6 @@ return {
   },
 
   {
-    'nvim-tree/nvim-tree.lua',
-    dependencies = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
-    },
-    tag = 'nightly', -- optional, updated every week. (see issue #1193)
-    keys = {
-      { '<leader>E', '<cmd>NvimTreeToggle<cr>', desc = "Toggle NvimTree" },
-      { '<leader>e', '<cmd>NvimTreeFindFileToggle<cr>', desc = "Toggle NvimTree in current file" },
-    },
-    config = function()
-      require('nvim-tree').setup({
-        respect_buf_cwd = true,
-        view = {
-          adaptive_size = true,
-        }
-      })
-    end,
-    init = function()
-      -- disable netrw at the very start of your init.lua (strongly advised)
-      vim.g.loaded_netrw = 1
-      vim.g.loaded_netrwPlugin = 1
-
-      -- set termguicolors to enable highlight groups
-      vim.opt.termguicolors = true
-    end
-  },
-
-  {
     'mrjones2014/smart-splits.nvim',
     config = function()
       require('smart-splits').setup({})
@@ -110,5 +82,12 @@ return {
     end
   },
 
-  { 'psliwka/vim-smoothie' }
+  { 'psliwka/vim-smoothie' },
+
+  {
+    'francoiscabrol/ranger.vim',
+    dependencies = { 'rbgrouleff/bclose.vim' },
+    init = require('config.navigation.ranger').init,
+    config = require('config.navigation.ranger').config,
+  }
 }
