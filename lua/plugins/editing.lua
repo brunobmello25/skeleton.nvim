@@ -22,7 +22,7 @@ return {
 
   {
     "AckslD/nvim-neoclip.lua",
-    requires = {
+    dependencies = {
       { 'nvim-telescope/telescope.nvim' },
     },
     config = require('config.editing.neoclip').config,
