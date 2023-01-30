@@ -38,4 +38,11 @@ return {
       })
     end
   },
+
+  {
+    "roberte777/keep-it-secret.nvim",
+    config = function()
+      require('config.ui.keep-it-secret').setup()
+    end
+  }
 }
