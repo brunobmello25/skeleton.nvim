@@ -1,16 +1,9 @@
 return {
   {
     "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
-    keys = {
-      { "<leader>ff", "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>", desc = "Find Files" },
-      { "<leader>fg", '<cmd>Telescope live_grep<cr>', desc = "Live Grep" },
-      { "<leader>fb", '<cmd>Telescope buffers<cr>', desc = "Buffers" },
-      { "<leader>fd", '<cmd>Telescope diagnostics<cr>', desc = "Diagnostics" },
-      { "<leader>fq", '<cmd>Telescope quickfix<cr>', desc = "List items in the quickfix list" },
-    },
-    dependencies = { 'nvim-lua/plenary.nvim' }
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = require('config.navigation.telescope').config
   },
 
   {

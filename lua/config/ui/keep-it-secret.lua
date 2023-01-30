@@ -1,5 +1,5 @@
 return {
-  setup = function()
+  config = function()
     require('keep-it-secret').setup()
 
     -- TODO: fix this

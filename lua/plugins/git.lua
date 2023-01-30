@@ -1,15 +1,11 @@
 return {
   {
     'f-person/git-blame.nvim',
-    init = function()
-      vim.g.gitblame_ignored_filetypes = { 'netrw' }
-    end
+    init = require('config.git.gitblame').init
   },
 
   {
     'lewis6991/gitsigns.nvim',
-    config = function()
-      require('gitsigns').setup()
-    end
+    config = require('config.git.gitsigns').config
   }
 }
