@@ -17,4 +17,3 @@ require('config.keymaps').setup()
 require('config.sets').setup()
 
 require("lazy").setup('plugins')
-
