@@ -84,4 +84,6 @@ return {
       require('nvim-ts-autotag').setup()
     end
   },
+
+  { 'styled-components/vim-styled-components' }
 }
