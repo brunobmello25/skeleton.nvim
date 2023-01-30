@@ -10,7 +10,7 @@ return {
     lsp.ensure_installed({
       'eslint',
       'sumneko_lua',
-      'vtsls'
+      'tsserver'
     })
 
     require('config.lsp.cmp').setup()
