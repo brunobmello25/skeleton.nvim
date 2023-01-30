@@ -20,8 +20,6 @@ return {
       { 'L3MON4D3/LuaSnip' }, -- Required
       { 'rafamadriz/friendly-snippets' }, -- Optional
     },
-    config = function()
-      require('config.lsp').setup()
-    end
+    config = require('config.lsp').config
   },
 }

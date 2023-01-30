@@ -1,11 +1,15 @@
 return {
-  setup = function()
+  config = function()
     vim.opt.signcolumn = 'yes'
 
     -- Learn the keybindings, see :help lsp-zero-keybindings
     -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
     local lsp = require('lsp-zero')
     lsp.preset('recommended')
+
+    lsp.set_preferences({
+      set_lsp_keymaps = false
+    })
 
     lsp.ensure_installed({
       'eslint',
