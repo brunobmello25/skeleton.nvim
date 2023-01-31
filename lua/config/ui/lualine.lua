@@ -78,18 +78,6 @@ return {
       lualine_y = {},
       lualine_z = {
         {
-          "filesize",
-          color = "StatusLine",
-          separator = { left = "", right = "" },
-        },
-        {
-          function()
-            return ""
-          end,
-          separator = { left = "", right = "" },
-          color = { bg = "#D08770" },
-        },
-        {
           "progress",
           color = "StatusLine",
         },
