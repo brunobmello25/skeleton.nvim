@@ -7,7 +7,7 @@ return {
     vim.keymap.set('v', '<S-Tab>', '<gv')
 
     -- copy relative path
-    vim.cmd('command! CopyRelPath call setreg(\'+\', expand(\'%\'))')
+    vim.cmd("command! CopyRelPath call setreg('+', expand('%'))")
 
     vim.keymap.set('n', '<leader>q', '<cmd>q<CR>')
 
