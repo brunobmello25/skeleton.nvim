@@ -1,37 +1,137 @@
 return {
   config = function()
-    require('lualine').setup({
-      options = {
-        theme = 'catppuccin'
+    local layout = {
+      lualine_a = {
+        {
+          function()
+            return ""
+          end,
+          separator = { left = "", right = "" },
+        },
       },
-      sections = {
-        lualine_z = {
-          {
-            'diagnostics',
+      lualine_b = {
+        {
+          "filetype",
+          icon_only = true,
+          colored = true,
+          color = { bg = "", fg = "" },
+        },
+        {
+          "filename",
+          color = { bg = "", fg = "StatusLine" },
+          separator = { left = "", right = "" },
+        },
+        {
+          "branch",
+          icon = "",
+          color = { bg = "#81b29a", fg = "#242933" },
+          separator = { left = "", right = "" },
+        },
+        {
+          "diff",
+          colored = true,
+          symbols = {
+            added = " ",
+            modified = " ",
+            removed = " ",
+          },
+          color = { bg = "#242933" },
+          separator = { left = "", right = "" },
+        },
+      },
+      lualine_c = {
+        {
+          function()
+            return ""
+          end,
+          color = { bg = "#f4f1de", fg = "#121319" },
+          separator = { left = "", right = "" },
+        },
+        {
+          "diagnostics",
+          sources = { "nvim_lsp" },
+          sections = {
+            "info",
+            "error",
+            "warn",
+            "hint",
+          },
+          diagnostic_color = {
+            error = { fg = "#eb6f92", bg = "#0f111a" },
+            warn = { fg = "DiagnosticWarn", bg = "#0f111a" },
+            info = { fg = "DiaganosticInfo", bg = "#0f111a" },
+            hint = { fg = "#9ccfd8", bg = "#0f111a" },
+          },
+          colored = true,
+          update_in_insert = true,
+          always_visible = false,
+          symbols = {
+            error = " ",
+            warn = " ",
+            hint = " ",
+            info = " ",
+          },
+          separator = { left = "", right = "" },
+        },
+      },
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {
+        {
+          "filesize",
+          color = "StatusLine",
+          separator = { left = "", right = "" },
+        },
+        {
+          function()
+            return ""
+          end,
+          separator = { left = "", right = "" },
+          color = { bg = "#D08770" },
+        },
+        {
+          "progress",
+          color = "StatusLine",
+        },
+        {
+          function()
+            return ""
+          end,
+          separator = { left = "", right = "" },
+          color = { bg = "#D08770" },
+        },
+        {
+          "location",
+          color = "StatusLine",
+        },
+        {
+          function()
+            return ""
+          end,
+          separator = { left = "", right = "" },
+          color = { bg = "#D08770" },
+        },
+      },
+    }
 
-            -- Table of diagnostic sources, available sources are:
-            --   'nvim_lsp', 'nvim_diagnostic', 'coc', 'ale', 'vim_lsp'.
-            -- or a function that returns a table as such:
-            --   { error=error_cnt, warn=warn_cnt, info=info_cnt, hint=hint_cnt }
-            sources = { 'nvim_diagnostic', 'nvim_lsp' },
+    local no_layout = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {},
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {},
+    }
 
-            -- Displays diagnostics for the defined severity types
-            sections = { 'error', 'warn', 'info', 'hint' },
-
-            diagnostics_color = {
-              -- Same values as the general color option can be used here.
-              error = 'DiagnosticError', -- Changes diagnostics' error color.
-              warn  = 'DiagnosticWarn', -- Changes diagnostics' warn color.
-              info  = 'DiagnosticInfo', -- Changes diagnostics' info color.
-              hint  = 'DiagnosticHint', -- Changes diagnostics' hint color.
-            },
-            symbols = { error = 'E', warn = 'W', info = 'I', hint = 'H' },
-            colored = true, -- Displays diagnostics status in color if set to true.
-            update_in_insert = false, -- Update diagnostics in insert mode.
-            always_visible = false, -- Show diagnostics even if there are none.
-          }
-        }
-      }
+    require('lualine').setup({
+      sections = layout,
+      inactive_sections = no_layout,
+      options = {
+        icons_enabled = true,
+        globalstatus = false,
+        disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
+        always_divide_middle = true,
+      },
     })
   end
 }
