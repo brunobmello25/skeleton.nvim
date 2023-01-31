@@ -14,7 +14,7 @@ return {
     lsp.ensure_installed({
       'eslint',
       'sumneko_lua',
-      'tsserver',
+      'vtsls',
       'gopls'
     })
 
