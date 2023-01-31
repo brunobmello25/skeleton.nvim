@@ -14,7 +14,8 @@ return {
     lsp.ensure_installed({
       'eslint',
       'sumneko_lua',
-      'tsserver'
+      'tsserver',
+      'gopls'
     })
 
     require('config.lsp.cmp').setup()
