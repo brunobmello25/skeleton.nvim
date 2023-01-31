@@ -15,7 +15,9 @@ return {
       'eslint',
       'sumneko_lua',
       'vtsls',
-      'gopls'
+      'gopls',
+      'jsonls',
+      'bashls'
     })
 
     require('config.lsp.cmp').setup()
