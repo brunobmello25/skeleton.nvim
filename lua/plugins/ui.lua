@@ -17,5 +17,10 @@ return {
     config = function()
       require('dashboard').setup({})
     end
-  }
+  },
+
+  {
+    'NvChad/nvim-colorizer.lua',
+    config = require('config.ui.colorizer').config
+  },
 }
