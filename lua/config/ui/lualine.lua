@@ -47,6 +47,9 @@ return {
           color = { bg = "#f4f1de", fg = "#121319" },
           separator = { left = "", right = "" },
         },
+      },
+      lualine_x = {},
+      lualine_y = {
         {
           "diagnostics",
           sources = { "nvim_lsp" },
@@ -74,8 +77,6 @@ return {
           separator = { left = "", right = "" },
         },
       },
-      lualine_x = {},
-      lualine_y = {},
       lualine_z = {
         {
           "progress",
