@@ -49,7 +49,6 @@ return {
 
   {
     "kylechui/nvim-surround",
-    tag = "*", -- Use for stability; omit to use `main` branch for the latest features
     config = require('config.editing.nvim_surround').config
   }
 }
