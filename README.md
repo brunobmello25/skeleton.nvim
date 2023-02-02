@@ -8,7 +8,7 @@ Because I named it after I looked to a skull that I have on my shelve and though
 
 # How to install
 
-```
+```bash
 git clone git@github.com:brunobmello25/skeleton.nvim.git # Clone it
 
 cd skeleton.nvim # cd into it
