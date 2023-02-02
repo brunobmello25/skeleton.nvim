@@ -8,11 +8,9 @@ Because I named it after I looked to a skull that I have on my shelve and though
 
 # How to install
 
-Run the following command
-
-```bash
-git clone git@github.com:brunobmello25/skeleton.nvim.git && \
-cd skeleton.nvim && \
-chmod +x ./install.sh && \
-./install.sh
 ```
+git clone git@github.com:brunobmello25/skeleton.nvim.git # Clone it
+
+cd skeleton.nvim # cd into it
+
+./install.sh # run install script
