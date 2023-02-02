@@ -21,4 +21,9 @@ return {
     'NvChad/nvim-colorizer.lua',
     config = require('config.ui.colorizer').config
   },
+
+  -- {
+  --   "folke/which-key.nvim",
+  --   config = require('config.ui.whichkey').config
+  -- },
 }
