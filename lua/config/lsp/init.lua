@@ -17,7 +17,8 @@ return {
       'vtsls',
       'gopls',
       'jsonls',
-      'bashls'
+      'bashls',
+      'tailwindcss'
     })
 
     require('config.lsp.cmp').setup()
