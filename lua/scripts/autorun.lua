@@ -1,16 +1,17 @@
 local function make_output_split()
-  local original_bufnr = vim.api.nvim_get_current_buf()
+  local current_win = vim.api.nvim_get_current_win()
 
-  vim.cmd('vnew')
+  vim.cmd('50vnew')
 
   local split_bufnr = vim.api.nvim_get_current_buf()
-  -- set split buffer to readonly
 
-  return original_bufnr, split_bufnr
+  vim.api.nvim_set_current_win(current_win)
+
+  return split_bufnr
 end
 
 local function attach_to_buffer(command, pattern)
-  local original_bufnr, split_bufnr = make_output_split()
+  local split_bufnr = make_output_split()
 
   local augroup = vim.api.nvim_create_augroup('AutoRun', { clear = true })
 
@@ -33,12 +34,13 @@ local function attach_to_buffer(command, pattern)
     end
   })
 
-  vim.api.nvim_create_autocmd('BufUnload', {
+  vim.api.nvim_create_autocmd('WinClosed', {
     buffer = split_bufnr,
+    group = augroup,
     callback = function()
-      vim.api.nvim_del_autocmd({ id = autocmd_id })
-      vim.api.nvim_buf_set_option(split_bufnr, 'modified', true)
-      vim.api.nvim_buf_delete(split_bufnr, { force = true })
+      vim.cmd(split_bufnr .. "bd!")
+      vim.api.nvim_del_autocmd(autocmd_id)
+      return true -- delete the autocommand after
     end
   })
 end
