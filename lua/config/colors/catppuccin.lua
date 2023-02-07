@@ -2,7 +2,12 @@ return {
   config = function()
     require('catppuccin').setup({
       integrations = {
-        telescope = true
+        telescope = true,
+        leap = true,
+        harpoon = true,
+        mason = true,
+        cmp = true,
+        treesitter = true
       }
     })
 
