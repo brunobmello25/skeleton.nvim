@@ -5,17 +5,16 @@ local function create_group_and_command(props)
 end
 
 return {
-    setup = function(client, bufnr)
-      local name = client.name
-      print("Setting up autoformat for " .. name)
-      local skip_format_autocmd = name == 'eslint' or name == 'vtsls' or name == 'tsserver'
+  setup = function(client, bufnr)
+    local name = client.name
+    local skip_format_autocmd = name == 'eslint' or name == 'vtsls' or name == 'tsserver'
 
-      if not skip_format_autocmd then
-        create_group_and_command({ name = "LspFormatOnSave", command = "LspZeroFormat", bufnr = bufnr })
-      end
-
-      if name == 'eslint' then
-        create_group_and_command({ name = "EslintFormatOnSave", command = "EslintFixAll", bufnr = bufnr })
-      end
+    if not skip_format_autocmd then
+      create_group_and_command({ name = "LspFormatOnSave", command = "LspZeroFormat", bufnr = bufnr })
     end
+
+    if name == 'eslint' then
+      create_group_and_command({ name = "EslintFormatOnSave", command = "EslintFixAll", bufnr = bufnr })
+    end
+  end
 }

@@ -1,11 +1,14 @@
 return {
-  init = function()
-    vim.g.copilot_assume_mapped = true
-    vim.g.copilot_no_tab_map = true
+  config = function()
+    local copilot = require('copilot')
+    local suggestion = require('copilot.suggestion')
 
-    vim.api.nvim_set_keymap("i", "<C-u>", 'copilot#Accept("<CR>")', {
-      silent = true,
-      expr = true
+    copilot.setup({
+      suggestion = {
+        auto_trigger = true
+      },
     })
+
+    vim.keymap.set('i', '<C-u>', function() suggestion.accept() end, {})
   end
 }

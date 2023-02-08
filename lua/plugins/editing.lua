@@ -16,8 +16,10 @@ return {
   },
 
   {
-    'github/copilot.vim',
-    init = require('config.editing.copilot').init,
+    'zbirenbaum/copilot.lua',
+    cmd = "Copilot",
+    event = "InsertEnter",
+    config = require('config.editing.copilot').config,
   },
 
   {
