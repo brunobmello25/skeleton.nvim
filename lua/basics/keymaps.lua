@@ -3,8 +3,8 @@ return {
     vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y<CR>')
 
     -- indent lines with tab and shift+tab in visual mode
-    vim.keymap.set('v', '<Tab>', '>gv')
-    vim.keymap.set('v', '<S-Tab>', '<gv')
+    vim.keymap.set('v', '>', '>gv')
+    vim.keymap.set('v', '<', '<gv')
 
     -- copy relative path
     vim.cmd("command! CopyRelPath call setreg('+', expand('%'))")
