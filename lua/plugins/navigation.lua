@@ -14,10 +14,11 @@ return {
     }
   },
 
-  {
-    'unblevable/quick-scope',
-    init = require('config.navigation.quickscope').init
-  },
+  -- TODO: delete after validate flit.nvim
+  -- {
+  --   'unblevable/quick-scope',
+  --   init = require('config.navigation.quickscope').init
+  -- },
 
   {
     'mrjones2014/smart-splits.nvim',

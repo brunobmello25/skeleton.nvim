@@ -49,8 +49,21 @@ return {
     end
   },
 
+  -- TODO: change this to the original plugin after the fix-20 branch is merged
+  {
+    'j-hui/flit.nvim',
+    dependencies = { 'ggandor/leap.nvim' },
+    branch = 'fix-20',
+    config = require('config.editing.flit').config,
+  },
+
   {
     "kylechui/nvim-surround",
     config = require('config.editing.nvim_surround').config
+  },
+
+  {
+    'kosayoda/nvim-lightbulb',
+    dependencies = { 'antoinemadec/FixCursorHold.nvim' },
   }
 }
