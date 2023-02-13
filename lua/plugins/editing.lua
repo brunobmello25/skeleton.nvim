@@ -59,9 +59,4 @@ return {
     "kylechui/nvim-surround",
     config = require('config.editing.nvim_surround').config
   },
-
-  {
-    'kosayoda/nvim-lightbulb',
-    dependencies = { 'antoinemadec/FixCursorHold.nvim' },
-  }
 }
