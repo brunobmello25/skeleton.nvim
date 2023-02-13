@@ -1,9 +1,11 @@
-return {
-  init = function()
-    vim.g.ranger_map_keys = 0
-  end,
+local M = {}
 
-  config = function()
-    vim.keymap.set('n', '<leader>e', '<cmd>Ranger<cr>')
-  end,
-}
+function M.init()
+  vim.g.ranger_map_keys = 0
+end
+
+function M.confg()
+  vim.keymap.set('n', '<leader>e', '<cmd>Ranger<cr>')
+end
+
+return M

@@ -1,36 +1,38 @@
-return {
-  config = function()
-    vim.opt.signcolumn = 'yes'
+local M = {}
 
-    -- Learn the keybindings, see :help lsp-zero-keybindings
-    -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-    local lsp = require('lsp-zero')
-    lsp.preset('recommended')
+function M.config()
+  vim.opt.signcolumn = 'yes'
 
-    lsp.set_preferences({
-      set_lsp_keymaps = false
-    })
+  -- Learn the keybindings, see :help lsp-zero-keybindings
+  -- Learn to configure LSP servers, see :help lsp-zero-api-showcase
+  local lsp = require('lsp-zero')
+  lsp.preset('recommended')
 
-    lsp.ensure_installed({
-      'eslint',
-      'lua_ls',
-      'vtsls',
-      'gopls',
-      'jsonls',
-      'bashls',
-      'tailwindcss'
-    })
+  lsp.set_preferences({
+    set_lsp_keymaps = false
+  })
 
-    require('config.lsp.cmp').setup()
+  lsp.ensure_installed({
+    'eslint',
+    'lua_ls',
+    'vtsls',
+    'gopls',
+    'jsonls',
+    'bashls',
+    'tailwindcss'
+  })
 
-    lsp.on_attach(function(client, bufnr)
-      require('config.lsp.keymaps').setup(client, bufnr)
-      require('config.lsp.autoformat').setup(client, bufnr)
-    end)
+  require('config.lsp.cmp').setup()
 
-    -- Configure lua language server for neovim
-    lsp.nvim_workspace()
+  lsp.on_attach(function(client, bufnr)
+    require('config.lsp.keymaps').setup(client, bufnr)
+    require('config.lsp.autoformat').setup(client, bufnr)
+  end)
 
-    lsp.setup()
-  end
-}
+  -- Configure lua language server for neovim
+  lsp.nvim_workspace()
+
+  lsp.setup()
+end
+
+return M

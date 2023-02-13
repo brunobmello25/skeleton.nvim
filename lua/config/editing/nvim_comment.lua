@@ -1,16 +1,19 @@
-return {
-  config = function()
-    require('nvim_comment').setup({
-      operator_mapping = "<leader>/",
-      hook = function()
-        local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+local M = {}
 
-        if filetype == "typescriptreact" or filetype == "javascriptreact" then
-          require("ts_context_commentstring.internal").update_commentstring({
-            key = '__multiline'
-          })
-        end
+
+function M.config()
+  require('nvim_comment').setup({
+    operator_mapping = "<leader>/",
+    hook = function()
+      local filetype = vim.api.nvim_buf_get_option(0, "filetype")
+
+      if filetype == "typescriptreact" or filetype == "javascriptreact" then
+        require("ts_context_commentstring.internal").update_commentstring({
+          key = '__multiline'
+        })
       end
-    })
-  end
-}
+    end
+  })
+end
+
+return M

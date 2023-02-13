@@ -1,5 +1,8 @@
-return {
-  config = function()
-    require('gitsigns').setup()
-  end
-}
+local M = {}
+
+
+function M.config()
+  require('gitsigns').setup()
+end
+
+return M

@@ -1,5 +1,7 @@
-return {
-  config = function()
-    require('colorizer').setup()
-  end
-}
+local M = {}
+
+function M.config()
+  require('colorizer').setup()
+end
+
+return M
