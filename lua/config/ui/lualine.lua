@@ -49,7 +49,23 @@ function M.config()
         separator = { left = "", right = "" },
       },
     },
-    lualine_x = {},
+    lualine_x = {
+      {
+        function()
+          local _, copilot_status = pcall(vim.api.nvim_get_var, "copilot_status")
+
+          if copilot_status == "Normal" then
+            return "ﮧ"
+          elseif copilot_status == "InProgress" then
+            return ""
+          elseif copilot_status == "Error" then
+            return ""
+          else
+            return ""
+          end
+        end
+      }
+    },
     lualine_y = {
       {
         "diagnostics",
