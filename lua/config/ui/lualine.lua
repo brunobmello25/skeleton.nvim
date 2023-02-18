@@ -50,21 +50,11 @@ function M.config()
       },
     },
     lualine_x = {
-      {
-        function()
-          local _, copilot_status = pcall(vim.api.nvim_get_var, "copilot_status")
+      function()
+        local copilot_status = require('utils.copilot_status')
 
-          if copilot_status == "Normal" then
-            return "ﮧ"
-          elseif copilot_status == "InProgress" then
-            return ""
-          elseif copilot_status == "Error" then
-            return ""
-          else
-            return ""
-          end
-        end
-      }
+        return copilot_status.get_status()
+      end
     },
     lualine_y = {
       {
