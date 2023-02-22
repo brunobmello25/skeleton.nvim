@@ -12,8 +12,8 @@ return {
     config = require('config.ui.dashboard').config
   },
 
-  {
-    'NvChad/nvim-colorizer.lua',
-    config = require('config.ui.colorizer').config
-  },
+  -- {
+  --   'NvChad/nvim-colorizer.lua',
+  --   config = require('config.ui.colorizer').config
+  -- },
 }
