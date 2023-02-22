@@ -22,11 +22,11 @@ function M.config()
     'tailwindcss'
   })
 
-  require('config.lsp.cmp').setup()
+  require('skeleton.config.lsp.cmp').setup()
 
   lsp.on_attach(function(client, bufnr)
-    require('config.lsp.keymaps').setup(client, bufnr)
-    require('config.lsp.autoformat').setup(client, bufnr)
+    require('skeleton.config.lsp.keymaps').setup(client, bufnr)
+    require('skeleton.config.lsp.autoformat').setup(client, bufnr)
   end)
 
   -- Configure lua language server for neovim

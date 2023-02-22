@@ -1,12 +1,12 @@
 vim.g.mapleader = " "
 
-require('globals')
+require('skeleton.globals')
 
-require('bootstrap').run()
+require('skeleton.bootstrap').run()
 
-require('basics.keymaps').setup()
-require('basics.sets').setup()
+require('skeleton.basics.keymaps').setup()
+require('skeleton.basics.sets').setup()
 
-require("lazy").setup('plugins')
+require("lazy").setup('skeleton.plugins')
 
-require('scripts').setup()
+require('skeleton.scripts').setup()

@@ -12,14 +12,14 @@ return {
         dependencies = { 'nvim-treesitter/nvim-treesitter' }
       }
     },
-    config = require('config.editing.nvim_comment').config
+    config = require('skeleton.config.editing.nvim_comment').config
   },
 
   {
     'zbirenbaum/copilot.lua',
     cmd = "Copilot",
     event = "InsertEnter",
-    config = require('config.editing.copilot').config,
+    config = require('skeleton.config.editing.copilot').config,
   },
 
   {
@@ -27,7 +27,7 @@ return {
     dependencies = {
       { 'nvim-telescope/telescope.nvim' },
     },
-    config = require('config.editing.neoclip').config,
+    config = require('skeleton.config.editing.neoclip').config,
   },
 
   -- autorun :noh when cursor moves
@@ -52,11 +52,11 @@ return {
   {
     'ggandor/flit.nvim',
     dependencies = { 'ggandor/leap.nvim' },
-    config = require('config.editing.flit').config,
+    config = require('skeleton.config.editing.flit').config,
   },
 
   {
     "kylechui/nvim-surround",
-    config = require('config.editing.nvim_surround').config
+    config = require('skeleton.config.editing.nvim_surround').config
   },
 }

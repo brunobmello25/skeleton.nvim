@@ -51,7 +51,7 @@ function M.config()
     },
     lualine_x = {
       function()
-        local copilot_status = require('utils.copilot_status')
+        local copilot_status = require('skeleton.utils.copilot_status')
 
         return copilot_status.get_status()
       end
