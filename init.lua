@@ -1,5 +1,7 @@
 vim.g.mapleader = " "
 
+require('globals')
+
 require('bootstrap').run()
 
 require('basics.keymaps').setup()
