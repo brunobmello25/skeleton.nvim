@@ -2,7 +2,7 @@ return {
   {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    config = require('skeleton.config.editing.treesitter').config
+    config = require('skeleton.config.treesitter').config
   },
 
   {
