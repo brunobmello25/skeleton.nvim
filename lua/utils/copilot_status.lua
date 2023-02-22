@@ -3,16 +3,20 @@ local M = { init = false }
 local status = ''
 local setup = function()
   local api = require('copilot.api')
+  local lualine = require('lualine')
+
   api.register_status_notification_handler(function(data)
     -- customize your message however you want
     if data.status == 'Normal' then
-      status = 'Ready'
+      status = 'Idle'
     elseif data.status == 'InProgress' then
-      status = 'Pending'
+      status = 'Loading'
     else
       status = data.status or 'Offline' -- might never actually be nil but just in case
     end
     status = 'Copilot: ' .. status
+
+    lualine.refresh()
   end)
 end
 
@@ -25,4 +29,3 @@ M.get_status = function()
 end
 
 return M
-
