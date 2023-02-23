@@ -3,8 +3,6 @@ local M = {}
 function M.config()
   local copilot = require('copilot')
   local suggestion = require('copilot.suggestion')
-  local api = require("copilot.api")
-  local lualine = require('lualine')
 
   copilot.setup({
     suggestion = {
