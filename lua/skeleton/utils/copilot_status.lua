@@ -9,6 +9,15 @@ M._setup = function()
   local api = require('copilot.api')
   local lualine = require('lualine')
 
+  local group = vim.api.nvim_create_augroup('CopilotStatus', { clear = true })
+  vim.api.nvim_create_autocmd('InsertLeave', {
+    group = group,
+    callback = function()
+      M._status = 'Idle'
+      lualine.refresh()
+    end
+  })
+
   api.register_status_notification_handler(function(data)
     -- customize your message however you want
     if data.status == 'Normal' then
@@ -22,7 +31,6 @@ M._setup = function()
         M._status = 'Offline'
       end
     end
-    M._status = 'Copilot: ' .. M._status
 
     lualine.refresh()
   end)
@@ -32,7 +40,7 @@ M.get_status = function()
   if not M._init then
     M._setup()
   end
-  return M._status
+  return 'Copilot: ' .. M._status
 end
 
 return M
