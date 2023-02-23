@@ -16,13 +16,6 @@ function M.config()
   })
 
   vim.keymap.set('i', '<C-u>', function() suggestion.accept() end, {})
-
-  vim.api.nvim_set_var("copilot_status", "")
-
-  api.register_status_notification_handler(function(data)
-    vim.api.nvim_set_var("copilot_status", data.status)
-    lualine.refresh()
-  end)
 end
 
 return M

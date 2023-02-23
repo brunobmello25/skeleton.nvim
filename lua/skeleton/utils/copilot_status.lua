@@ -16,7 +16,11 @@ M._setup = function()
     elseif data.status == 'InProgress' then
       M._status = 'Loading'
     else
-      M._status = data.status or 'Offline' -- might never actually be nil but just in case
+      if data.status ~= '' then
+        M._status = data.status -- might never actually be nil but just in case
+      else
+        M._status = 'Offline'
+      end
     end
     M._status = 'Copilot: ' .. M._status
 
