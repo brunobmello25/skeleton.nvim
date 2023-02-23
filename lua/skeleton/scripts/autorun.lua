@@ -46,8 +46,10 @@ local function attach_to_buffer(command, pattern)
 end
 
 vim.api.nvim_create_user_command('AutoRun', function()
-  local command = vim.split(vim.fn.input("Command: "), ' ')
-  local pattern = vim.fn.input("Pattern: ")
-
-  attach_to_buffer(command, pattern)
+  vim.ui.input({ prompt = 'Command: ' }, function(command)
+    vim.ui.input({ prompt = "Pattern: " }, function(pattern)
+      local splitted_command = vim.split(command, ' ')
+      attach_to_buffer(splitted_command, pattern)
+    end)
+  end)
 end, {})
