@@ -18,5 +18,8 @@ return {
     vim.keymap.set('n', 'J', 'mzJ`z')
 
     vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
+
+    vim.keymap.set('c', '<C-h>', '<Left>')
+    vim.keymap.set('c', '<C-l>', '<Right>')
   end
 }
