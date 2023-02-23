@@ -21,8 +21,8 @@ return {
 
     vim.opt.ignorecase = true
 
-    vim.cmd('filetype plugin indent on')
-    vim.cmd('set splitbelow splitright')
+    vim.opt.splitbelow = true
+    vim.opt.splitright = true
 
     vim.opt.updatetime = 50
 
