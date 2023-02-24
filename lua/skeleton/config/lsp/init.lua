@@ -19,7 +19,8 @@ function M.config()
     'gopls',
     'jsonls',
     'bashls',
-    'tailwindcss'
+    'tailwindcss',
+    'rust_analyzer',
   })
 
   require('skeleton.config.lsp.cmp').setup()
