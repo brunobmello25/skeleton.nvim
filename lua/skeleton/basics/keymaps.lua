@@ -24,5 +24,8 @@ return {
 
     -- exit terminal with esc in terminal mode
     vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+
+    -- prevent yank when pasting from visual mode
+    vim.keymap.set('x', 'p', '"_dP')
   end
 }
