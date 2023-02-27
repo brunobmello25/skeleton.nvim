@@ -28,8 +28,7 @@ return {
   { 'psliwka/vim-smoothie' },
 
   {
-    'francoiscabrol/ranger.vim',
-    dependencies = { 'rbgrouleff/bclose.vim' },
+    'kevinhwang91/rnvimr',
     init = require('skeleton.config.navigation.ranger').init,
     config = require('skeleton.config.navigation.ranger').config,
   }

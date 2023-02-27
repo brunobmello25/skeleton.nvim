@@ -1,11 +1,12 @@
 local M = {}
 
 function M.init()
-  vim.g.ranger_map_keys = 0
+  -- vim.g.rnvimr_enable_ex = 1 -- TODO: decide if I wanna use this
+  vim.g.rnvimr_enable_picker = 1
 end
 
 function M.config()
-  vim.keymap.set('n', '<leader>e', '<cmd>Ranger<cr>')
+  vim.keymap.set('n', '<leader>e', '<cmd>RnvimrToggle<cr>')
 end
 
 return M
