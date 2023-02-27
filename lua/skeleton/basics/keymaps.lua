@@ -21,5 +21,8 @@ return {
 
     vim.keymap.set('c', '<C-h>', '<Left>')
     vim.keymap.set('c', '<C-l>', '<Right>')
+
+    -- exit terminal with esc in terminal mode
+    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
   end
 }
