@@ -13,5 +13,9 @@ return {
     'TimUntersberger/neogit',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = require('skeleton.config.git.neogit').config
+  },
+
+  {
+    'tpope/vim-fugitive'
   }
 }
