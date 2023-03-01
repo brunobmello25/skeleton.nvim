@@ -38,6 +38,8 @@ function M.setup(client, bufnr)
     create_commmand({ command = "LspZeroFormat", bufnr = bufnr })
     return
   end
+
+  create_commmand({ command = "LspZeroFormat", bufnr = bufnr })
 end
 
 return M
