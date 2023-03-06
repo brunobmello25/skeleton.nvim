@@ -27,5 +27,8 @@ return {
 
     -- prevent yank when pasting from visual mode
     vim.keymap.set('x', 'p', '"_dP')
+
+    -- send ctrl+f to terminal
+    vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
   end
 }
