@@ -1,23 +1,17 @@
-vim.api.nvim_create_user_command('CargoWatch', function()
-  vim.ui.input({
-    prompt = 'Enter a cargo watch command (defaults to run): ',
-  }, function(command)
-    if command == '' then
-      command = 'run'
-    end
+local function create_split()
+  local width = vim.api.nvim_get_option('columns')
 
-    local current_window = vim.api.nvim_get_current_win()
+  vim.cmd('vnew')
 
-    vim.cmd('vnew')
+  vim.cmd('vertical resize ' .. math.floor(width * 0.4))
 
-    vim.cmd('terminal')
+  vim.cmd('term')
 
-    -- vim.api.nvim_win_set_cursor(0, { 1, 0 })
+  vim.cmd("call feedkeys('i')")
 
-    vim.cmd('startinsert')
+  local cmd = "cargo watch -x"
 
-    -- vim.fn.termopen('cargo watch -x ' .. command)
-    --
-    -- vim.api.nvim_set_current_win(current_window)
-  end)
-end, {})
+  vim.cmd("call feedkeys('" .. cmd .. "')")
+end
+
+vim.api.nvim_create_user_command('CargoWatch', create_split, {})
