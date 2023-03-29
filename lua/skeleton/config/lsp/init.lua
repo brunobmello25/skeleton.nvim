@@ -16,7 +16,6 @@ function M.config()
     'eslint',
     'lua_ls',
     'vtsls',
-    'gopls',
     'jsonls',
     'bashls',
     'tailwindcss',
