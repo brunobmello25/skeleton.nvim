@@ -1,6 +1,8 @@
-return {
-  setup = function()
-    require('skeleton.scripts.autorun')
-    require('skeleton.scripts.cargowatch')
-  end
-}
+local M = {}
+
+function M.setup()
+  require('skeleton.scripts.autorun')
+  require('skeleton.scripts.cargowatch')
+end
+
+return M
