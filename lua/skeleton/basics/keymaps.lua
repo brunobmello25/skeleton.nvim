@@ -17,18 +17,13 @@ return {
 
     vim.keymap.set('n', 'J', 'mzJ`z')
 
-    vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-
-    vim.keymap.set('c', '<C-h>', '<Left>')
-    vim.keymap.set('c', '<C-l>', '<Right>')
-
-    -- exit terminal with esc in terminal mode
-    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+    -- vim.keymap.set('c', '<C-h>', '<Left>')
+    -- vim.keymap.set('c', '<C-l>', '<Right>')
 
     -- prevent yank when pasting from visual mode
     vim.keymap.set('x', 'p', '"_dP')
 
-    -- send ctrl+f to terminal
+    -- sessionizer
     vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
   end
 }
