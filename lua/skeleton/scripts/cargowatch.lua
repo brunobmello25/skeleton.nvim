@@ -1,17 +1,13 @@
+local M = {}
+
 local function create_split()
-  local width = vim.api.nvim_get_option('columns')
+  local command = vim.fn.input('Cargo watch command: ')
 
-  vim.cmd('vnew')
-
-  vim.cmd('vertical resize ' .. math.floor(width * 0.4))
-
-  vim.cmd('term')
-
-  vim.cmd("call feedkeys('i')")
-
-  local cmd = "cargo watch -x"
-
-  vim.cmd("call feedkeys('" .. cmd .. "')")
+  vim.cmd('silent !tmux split-window -hf "cargo watch -x ' .. command .. '"')
 end
 
-vim.api.nvim_create_user_command('CargoWatch', create_split, {})
+M.setup = function()
+  vim.api.nvim_create_user_command('CargoWatch', create_split, {})
+end
+
+return M
