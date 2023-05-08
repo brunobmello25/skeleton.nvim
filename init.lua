@@ -9,4 +9,4 @@ require('skeleton.basics.sets').setup()
 
 require("lazy").setup('skeleton.plugins')
 
-require('skeleton.scripts').setup()
+require('skeleton.commands').setup()

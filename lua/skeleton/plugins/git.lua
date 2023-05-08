@@ -17,5 +17,10 @@ return {
 
   {
     'tpope/vim-fugitive'
+  },
+
+  {
+    'kdheepak/lazygit.nvim',
+    config = require('skeleton.config.git.lazygit').config
   }
 }
