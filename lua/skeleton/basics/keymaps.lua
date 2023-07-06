@@ -1,7 +1,5 @@
 return {
   setup = function()
-    local wk = require('which-key')
-
     vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y<CR>')
 
     -- indent lines with tab and shift+tab in visual mode
@@ -27,18 +25,5 @@ return {
 
     -- sessionizer
     vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
-
-    vim.keymap.set('n', '<leader>sv', '<cmd>vsplit<CR>')
-    vim.keymap.set('n', '<leader>sh', '<cmd>split<CR>')
-
-    wk.register({
-      y = 'yank to clipboard',
-      q = 'quit',
-      s = {
-        name = 'split',
-        v = 'vertical',
-        h = 'horizontal'
-      },
-    }, { prefix = '<leader>' })
   end
 }

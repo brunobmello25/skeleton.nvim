@@ -5,8 +5,6 @@ return {
       { 'nvim-telescope/telescope.nvim' },
     },
     config = function()
-      local wk = require('which-key')
-
       require('neoclip').setup({
         keys = {
           telescope = {
@@ -33,13 +31,6 @@ return {
       })
 
       vim.keymap.set('n', '<leader>fy', "<cmd>lua require('telescope').extensions.neoclip.neoclip()<cr>")
-
-      wk.register({
-        f = {
-          name = 'Find',
-          y = 'Yank history'
-        }
-      }, { prefix = '<leader>' })
     end
   },
 }

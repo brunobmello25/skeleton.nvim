@@ -2,8 +2,6 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function()
-      local wk = require('which-key')
-
       vim.keymap.set('n', '<F10>', '<cmd>lua require"dap".step_over()<CR>')
       vim.keymap.set('n', '<F11>', '<cmd>lua require"dap".step_into()<CR>')
       vim.keymap.set('n', '<F12>', '<cmd>lua require"dap".step_out()<CR>')
@@ -13,31 +11,30 @@ return {
         '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>')
 
       vim.keymap.set('n', '<leader>du', '<cmd>lua require"dapui".toggle()<CR>')
-
-      wk.register({
-        d = {
-          name = "Debugger",
-          b = 'Toggle breakpoint',
-          c = 'Toggle conditional breakpoint',
-        }
-      }, { prefix = '<leader>' })
     end
   },
 
   {
     'rcarriga/nvim-dap-ui',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+    },
     config = function()
+      local dap = require('dap')
       local dapui = require('dapui')
-      local wk = require('which-key')
-
       dapui.setup()
 
-      wk.register({
-        d = {
-          name = "Debugger",
-          u = 'Toggle UI',
-        }
-      }, { prefix = '<leader>' })
+      dap.listeners.after.event_initialized['dapui_config'] = function()
+        dapui.open()
+      end
+
+      dap.listeners.before.event_terminated['dapui_config'] = function()
+        dapui.close()
+      end
+
+      dap.listeners.before.event_exited['dapui_config'] = function()
+        dapui.close()
+      end
     end
   },
 
@@ -50,26 +47,23 @@ return {
     config = function()
       require("mason-nvim-dap").setup({
         ensure_installed = { "python", "rust" },
-        handlers = {
-          function(config)
-            -- all sources with no handler get passed here
-
-            -- Keep original functionality
-            require('mason-nvim-dap').default_setup(config)
-          end,
-          python = function(config)
-            config.adapters = {
-              type = "executable",
-              command = "python",
-              args = {
-                "-m",
-                "debugpy.adapter",
-              },
-            }
-            require('mason-nvim-dap').default_setup(config) -- don't forget this!
-          end,
-        },
       })
+    end
+  },
+
+  {
+    'mfussenegger/nvim-dap-python',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'rcarriga/nvim-dap-ui',
+    },
+    ft = { 'python' },
+    config = function()
+      -- local path = vim.fn.getcwd() .. '/.venv/bin/python'
+      -- require('dap-python').setup(path)
+
+      local path = require("mason-registry").get_package("debugpy"):get_install_path()
+      require("dap-python").setup(path .. "/venv/bin/python")
     end
   }
 }
