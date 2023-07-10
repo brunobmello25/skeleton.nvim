@@ -9,7 +9,6 @@ return {
       vim.keymap.set('n', '<F5>', function()
         if vim.fn.filereadable(".vscode/launch.json") then
           require("dap.ext.vscode").load_launchjs()
-          print('setup vscode')
         end
 
         require('dap').continue()
