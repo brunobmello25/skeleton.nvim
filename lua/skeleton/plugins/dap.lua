@@ -59,11 +59,36 @@ return {
     },
     ft = { 'python' },
     config = function()
-      -- local path = vim.fn.getcwd() .. '/.venv/bin/python'
-      -- require('dap-python').setup(path)
+      local dap = require('dap')
+      local dap_python = require('dap-python')
 
-      local path = require("mason-registry").get_package("debugpy"):get_install_path()
-      require("dap-python").setup(path .. "/venv/bin/python")
+      local venv_path = vim.fn.getcwd() .. '/venv/bin/python'
+      local mason_path = require('mason-registry').get_package('debugpy'):get_install_path() .. '/venv/bin/python'
+
+      local path = venv_path
+      if vim.fn.filereadable(path) == 0 then
+        path = mason_path
+      end
+      if vim.fn.filereadable(path) == 0 then
+        path = vim.fn.exepath('python')
+      end
+
+      dap_python.setup(path)
+
+      table.insert(dap.configurations.python, {
+        name = "Launch Flask server",
+        type = "python",
+        request = "launch",
+        console = "integratedTerminal",
+        cwd = "${workspaceFolder}",
+        program = path,
+        args = {
+          "run",
+          "flask",
+          "--no-debug",
+          "run",
+        },
+      })
     end
   }
 }
