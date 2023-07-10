@@ -5,7 +5,6 @@ return {
       vim.keymap.set('n', '<F10>', '<cmd>lua require"dap".step_over()<CR>')
       vim.keymap.set('n', '<F11>', '<cmd>lua require"dap".step_into()<CR>')
       vim.keymap.set('n', '<F12>', '<cmd>lua require"dap".step_out()<CR>')
-      vim.keymap.set('n', '<F5>', '<cmd>lua require"dap".continue()<CR>')
       vim.keymap.set('n', '<F5>', function()
         if vim.fn.filereadable(".vscode/launch.json") then
           require("dap.ext.vscode").load_launchjs()
@@ -53,8 +52,22 @@ return {
     },
     config = function()
       require("mason-nvim-dap").setup({
-        ensure_installed = { "python", "rust" },
+        ensure_installed = {
+          "python", -- debugpy
+          "delve",  -- golang
+        },
       })
+    end
+  },
+
+  {
+    'leoluz/nvim-dap-go',
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'rcarriga/nvim-dap-ui',
+    },
+    config = function()
+      require('dap-go').setup()
     end
   },
 
