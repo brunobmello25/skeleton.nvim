@@ -78,7 +78,6 @@ return {
       'rcarriga/nvim-dap-ui',
     },
     config = function()
-      local dap = require('dap')
       local dap_python = require('dap-python')
 
       local path
@@ -109,5 +108,5 @@ return {
     config = function()
       require("nvim-dap-virtual-text").setup()
     end
-  }
+  },
 }
