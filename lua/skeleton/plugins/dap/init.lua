@@ -6,7 +6,7 @@ return {
       vim.keymap.set('n', '<F11>', '<cmd>lua require"dap".step_into()<CR>')
       vim.keymap.set('n', '<F12>', '<cmd>lua require"dap".step_out()<CR>')
       vim.keymap.set('n', '<F5>', function()
-        if vim.fn.filereadable(".vscode/launch.json") then
+        if vim.fn.filereadable(".vscode/launch.json") == 1 then
           require("dap.ext.vscode").load_launchjs()
         end
 
