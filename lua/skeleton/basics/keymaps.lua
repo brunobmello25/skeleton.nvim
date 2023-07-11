@@ -25,5 +25,7 @@ return {
 
     -- sessionizer
     vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+
+    vim.keymap.set('n', '<leader>w', '<C-w>')
   end
 }
