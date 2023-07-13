@@ -32,6 +32,8 @@ function M.config()
   -- Configure lua language server for neovim
   lsp.nvim_workspace()
 
+  lsp.skip_server_setup({ 'rust_analyzer' })
+
   lsp.setup()
 end
 

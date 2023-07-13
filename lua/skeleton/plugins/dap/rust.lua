@@ -1,4 +1,0 @@
-return {
-  setup = function()
-  end
-}
