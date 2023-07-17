@@ -110,24 +110,4 @@ return {
     end
   },
 
-  -- {
-  --   'simrat39/rust-tools.nvim',
-  --   dependencies = {
-  --     'neovim/nvim-lspconfig',
-  --     'nvim-lua/plenary.nvim',
-  --     'mfussenegger/nvim-dap',
-  --   },
-  --   ft = "rust",
-  --   config = function()
-  --     local rt = require("rust-tools")
-  --
-  --     rt.setup({
-  --       server = {
-  --         on_attach = function(client, bufnr)
-  --           require('skeleton.config.lsp.keymaps').setup(client, bufnr)
-  --         end,
-  --       },
-  --     })
-  --   end
-  -- }
 }
