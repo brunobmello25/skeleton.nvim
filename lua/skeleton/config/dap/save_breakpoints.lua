@@ -4,6 +4,16 @@ local store_path = vim.fn.stdpath('data') .. '/dap-breakpoints.json'
 
 local M = {}
 
+local function create_file_if_not_exists(path)
+  local fp, err = io.open(path, 'r')
+
+  if err ~= nil then
+    fp = io.open(path, 'w')
+    fp:write("[]")
+    fp:close()
+  end
+end
+
 local function store()
   local bps = {}
 
@@ -16,7 +26,6 @@ local function store()
   local fp, err = io.open(store_path, 'w')
 
   if err ~= nil then
-    print(err)
     return
   end
 
@@ -25,6 +34,8 @@ local function store()
 end
 
 local function load(bufnr)
+  create_file_if_not_exists(store_path)
+
   local fp, err = io.open(store_path, 'r')
 
   if err ~= nil then
@@ -69,7 +80,7 @@ function M.setup()
     end
   })
 
-  vim.api.nvim_create_autocmd('BufWritePost', {
+  vim.api.nvim_create_autocmd('VimLeave', {
     callback = function()
       store()
     end
