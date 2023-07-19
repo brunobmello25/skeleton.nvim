@@ -27,5 +27,8 @@ return {
     vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
     vim.keymap.set('n', '<leader>w', '<C-w>')
+
+    -- source current file
+    vim.keymap.set('n', '<leader><leader><leader>', '<cmd>luafile %<CR>')
   end
 }
