@@ -6,9 +6,12 @@ local M = {}
 
 local function store()
   local bps = {}
+
   local breakpoints_by_buf = breakpoints.get()
+
   for buf, buf_bps in pairs(breakpoints_by_buf) do
-    bps[tostring(buf)] = buf_bps
+    local filename = vim.api.nvim_buf_get_name(buf)
+    bps[filename] = buf_bps
   end
   local fp, err = io.open(store_path, 'w')
 
@@ -21,7 +24,7 @@ local function store()
   fp:close()
 end
 
-local function load()
+local function load(bufnr)
   local fp, err = io.open(store_path, 'r')
 
   if err ~= nil then
@@ -29,21 +32,26 @@ local function load()
     return
   end
 
+  local filename = vim.api.nvim_buf_get_name(bufnr)
+
   local content = fp:read('*a')
   local bps = vim.fn.json_decode(content)
+  local file_bps = bps[filename]
 
-  for buf, buf_bps in pairs(bps) do
-    for _, bp in pairs(buf_bps) do
-      local line = bp.line
+  if file_bps == nil then
+    return
+  end
 
-      local opts = {
-        condition = bp.condition,
-        log_message = bp.logMessage,
-        hit_condition = bp.hitCondition
-      }
+  for _, bp in pairs(file_bps) do
+    local line = bp.line
 
-      breakpoints.set(opts, tonumber(buf), line)
-    end
+    local opts = {
+      condition = bp.condition,
+      log_message = bp.logMessage,
+      hit_condition = bp.hitCondition
+    }
+
+    breakpoints.set(opts, tonumber(buf), line)
   end
 end
 
@@ -51,17 +59,19 @@ end
 function M.setup()
   vim.api.nvim_create_user_command('SaveBreakpoints', store, {})
 
-  vim.api.nvim_create_user_command('LoadBreakpoints', load, {})
+  vim.api.nvim_create_user_command('LoadBreakpoints', function()
+    load(vim.api.nvim_get_current_buf())
+  end, {})
 
-  vim.api.nvim_create_autocmd({ "VimLeavePre" }, {
+  vim.api.nvim_create_autocmd('BufEnter', {
     callback = function()
-      store()
+      load(vim.api.nvim_get_current_buf())
     end
   })
 
-  vim.api.nvim_create_autocmd({ "VimEnter" }, {
+  vim.api.nvim_create_autocmd('BufWritePost', {
     callback = function()
-      load(current_buffer)
+      store()
     end
   })
 end
