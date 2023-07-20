@@ -4,7 +4,7 @@ My personal neovim config.
 
 "Why skeleton?"
 
-Because I named it after I looked to a skull that I have on my shelve and thought it sounded cool.
+Because I named it after I looked to a skull that I have on my shelve and thought it sounded cool. Also: "don't give up, skeleton!"
 
 # How to install
 
