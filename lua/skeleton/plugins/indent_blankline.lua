@@ -20,6 +20,11 @@ return {
         },
         show_trailing_blankline_indent = false,
       }
+
+      vim.api.nvim_create_user_command('ToggleRainbow', 'IndentBlanklineToggle', {})
+    end,
+    init = function()
+      vim.g.indent_blankline_enabled = false
     end
   }
 }
