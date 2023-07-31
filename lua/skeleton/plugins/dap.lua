@@ -17,6 +17,11 @@ return {
         '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>')
 
       vim.keymap.set('n', '<leader>du', '<cmd>lua require"dapui".toggle()<CR>')
+
+      vim.api.nvim_create_user_command("DapDisconnect", function()
+        require("dap").disconnect()
+        require("dapui").close()
+      end, {})
     end
   },
 
