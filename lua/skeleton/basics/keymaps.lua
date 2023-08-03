@@ -29,7 +29,11 @@ return {
     vim.keymap.set('n', '<leader>w', '<C-w>')
 
     -- source current file
-    vim.keymap.set('n', '<leader><leader><leader>', '<cmd>luafile %<CR>')
+    vim.keymap.set('n', '<leader><leader>x', function()
+      -- save and source
+      vim.cmd('w')
+      vim.cmd('source %')
+    end)
 
     -- toggle wrap
     vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>')
