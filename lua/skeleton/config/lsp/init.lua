@@ -12,10 +12,6 @@ function M.config()
 
   lsp.skip_server_setup({ 'rust_analyzer' })
 
-  -- (Optional) Configure lua language server for neovim
-  -- TODO: delete this if neodev works fine
-  -- require('lspconfig').lua_ls.setup(lsp.nvim_lua_ls())
-
   lsp.setup()
 
   require('skeleton.config.lsp.cmp').setup()
