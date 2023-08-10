@@ -4,6 +4,22 @@ return {
     version = false, -- telescope did only one release, so use HEAD for now
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
+      -- customize ripgrep args
+      require('telescope').setup {
+        defaults = {
+          vimgrep_arguments = {
+            "rg",
+            "--color=never",
+            "--no-heading",
+            "--with-filename",
+            "--line-number",
+            "--column",
+            "--smart-case",
+            "--hidden",
+          },
+        }
+      }
+
       vim.keymap.set('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>",
         { desc = "Find files" })
       vim.keymap.set('n', "<leader>fg", '<cmd>Telescope live_grep<cr>', { desc = 'Live grep' })
