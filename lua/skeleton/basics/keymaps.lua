@@ -34,5 +34,7 @@ return {
 
     -- toggle wrap
     vim.keymap.set('n', '<leader>tw', '<cmd>set wrap!<CR>')
+
+    vim.keymap.set('n', '<leader>m', '\'')
   end
 }

@@ -27,6 +27,7 @@ return {
       vim.keymap.set('n', '<leader>fd', '<cmd>Telescope diagnostics<cr>', { desc = 'diagnostics' })
       vim.keymap.set('n', '<leader>fq', '<cmd>Telescope quickfix<cr>', { desc = 'List items in the quickfix list' })
       vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'List help tags' })
+      vim.keymap.set('n', '<leader>fm', '<cmd>Telescope marks<cr>', { desc = 'List marks' })
     end
   },
 }
