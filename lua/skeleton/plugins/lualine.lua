@@ -8,6 +8,7 @@ return {
           lualine_c = { { 'filename', path = 1 } }
         },
         options = {
+          theme = 'catppuccin',
           icons_enabled = true,
           globalstatus = false,
           disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },

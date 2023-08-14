@@ -5,13 +5,19 @@ return {
     priority = 1000,
     config = function()
       require('catppuccin').setup({
+        transparent_background = true,
         integrations = {
           telescope = true,
           leap = true,
           harpoon = true,
           mason = true,
           cmp = true,
-          treesitter = true
+          treesitter = true,
+          gitsigns = true,
+          dap = {
+            enabled = true,
+            enable_ui = true,
+          }
         }
       })
 
