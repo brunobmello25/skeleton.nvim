@@ -61,8 +61,9 @@ return {
     config = function()
       require("mason-nvim-dap").setup({
         ensure_installed = {
-          "python", -- debugpy
-          "delve",  -- golang
+          "python",   -- debugpy
+          "delve",    -- golang
+          "codelldb", -- rust, c, c++
         },
       })
     end

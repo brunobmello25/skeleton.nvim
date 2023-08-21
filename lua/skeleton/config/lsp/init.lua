@@ -25,6 +25,7 @@ function M.config()
       'bashls',
       'tailwindcss',
       'pylsp',
+      'rust_analyzer',
     }
   })
 
