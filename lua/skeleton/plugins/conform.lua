@@ -15,6 +15,8 @@ return {
           rust = { "rustfmt" },
 
           go = { "gofmt", "goimports" },
+
+          json = { "jq" },
         },
       })
 
