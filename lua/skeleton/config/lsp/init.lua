@@ -7,6 +7,13 @@ function M.config()
 
   lsp.on_attach(function(client, bufnr)
     require("skeleton.config.lsp.keymaps").setup(client, bufnr)
+
+    if client.name == "eslint" then
+      vim.cmd("augroup MyEslintAutoCmdGroup")
+      vim.cmd("autocmd!") -- Clear any autocmds in the group to avoid multiple registrations
+      vim.cmd(string.format("autocmd BufWritePre <buffer=%s> EslintFixAll", bufnr))
+      vim.cmd("augroup END")
+    end
   end)
 
   lsp.skip_server_setup({ "rust_analyzer" })
