@@ -18,6 +18,7 @@ return {
           go = { "gofmt", "goimports" },
 
           json = { "jq" },
+          yaml = { "prettier", "prettierd" },
         },
       })
 
