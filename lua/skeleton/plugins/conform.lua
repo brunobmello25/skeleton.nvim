@@ -19,6 +19,8 @@ return {
 
           json = { "jq" },
           yaml = { "prettier", "prettierd" },
+          html = { "prettier", "prettierd" },
+          css = { "prettier", "prettierd" },
         },
 
         format_on_save = {
