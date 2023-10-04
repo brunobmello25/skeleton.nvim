@@ -1,8 +1,9 @@
 local M = {}
 
 function M.setup()
-  local cmp = require('cmp')
-  local luasnip = require('luasnip')
+  local cmp = require("cmp")
+  local cmp_format = require("lsp-zero").cmp_format()
+  local luasnip = require("luasnip")
 
   local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -12,19 +13,20 @@ function M.setup()
   end
 
   cmp.setup({
+    formatting = cmp_format,
     souces = {
-      { name = 'nvim_lsp', keyword_length = 3 },
-      { name = 'buffer',   keyword_length = 3 },
-      { name = 'luasnip',  keyword_length = 2 },
+      { name = "nvim_lsp", keyword_length = 3 },
+      { name = "buffer", keyword_length = 3 },
+      { name = "luasnip", keyword_length = 2 },
     },
     mapping = {
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.close(),
-      ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-      ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }),
-      ['<C-u>'] = vim.NIL,
-    }
+      ["<C-Space>"] = cmp.mapping.complete(),
+      ["<C-e>"] = cmp.mapping.close(),
+      ["<C-p>"] = cmp.mapping.select_prev_item(cmp_select),
+      ["<C-n>"] = cmp.mapping.select_next_item(cmp_select),
+      ["<CR>"] = cmp.mapping.confirm({ select = true }),
+      ["<C-u>"] = vim.NIL,
+    },
   })
 end
 
