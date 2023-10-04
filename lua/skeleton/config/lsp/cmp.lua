@@ -27,6 +27,11 @@ function M.setup()
       ["<CR>"] = cmp.mapping.confirm({ select = true }),
       ["<C-u>"] = vim.NIL,
     },
+    snippet = {
+      expand = function(args)
+        luasnip.lsp_expand(args.body)
+      end,
+    },
   })
 end
 
