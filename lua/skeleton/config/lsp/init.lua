@@ -16,8 +16,6 @@ function M.config()
     end
   end)
 
-  lsp.skip_server_setup({ "rust_analyzer" })
-
   lsp.setup()
 
   require("skeleton.config.lsp.cmp").setup()
@@ -40,6 +38,7 @@ function M.config()
         require("lspconfig").lua_ls.setup(lua_opts)
       end,
       rust_analyzer = lsp.noop,
+      jdtls = lsp.noop,
     },
   })
 
