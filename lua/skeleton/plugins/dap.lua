@@ -25,6 +25,7 @@ return {
       vim.keymap.set("n", "<leader>du", '<cmd>lua require"dapui".toggle()<CR>')
       -- reset dap ui
       vim.keymap.set("n", "<leader>dr", '<cmd>lua require"dapui".open({ reset = true })<CR>')
+      vim.keymap.set("n", "<leader>de", '<cmd>lua require"dapui".eval()<CR>')
 
       vim.api.nvim_create_user_command("DapDisconnect", function()
         require("dap").disconnect()
