@@ -15,12 +15,6 @@ return {
 
         require("dap").continue()
       end)
-      vim.keymap.set("n", "<leader>db", '<cmd>lua require"dap".toggle_breakpoint()<CR>')
-      vim.keymap.set(
-        "n",
-        "<leader>dc",
-        '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>'
-      )
 
       vim.keymap.set("n", "<leader>du", '<cmd>lua require"dapui".toggle()<CR>')
       -- reset dap ui
