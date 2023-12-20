@@ -7,8 +7,7 @@ return {
       local harpoon = require("harpoon")
 
       harpoon:setup({
-        default = {
-          sync_on_ui_close = true,
+        settings = {
           save_on_toggle = true,
         },
       })
