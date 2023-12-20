@@ -21,6 +21,13 @@ return {
       vim.keymap.set("n", "<leader>dr", '<cmd>lua require"dapui".open({ reset = true })<CR>')
       vim.keymap.set("n", "<leader>de", '<cmd>lua require"dapui".eval()<CR>')
 
+      vim.keymap.set("n", "<leader>db", '<cmd>lua require"dap".toggle_breakpoint()<CR>')
+      vim.keymap.set(
+        "n",
+        "<leader>dc",
+        '<cmd>lua require"dap".set_breakpoint(vim.fn.input("Breakpoint condition: "))<CR>'
+      )
+
       vim.api.nvim_create_user_command("DapDisconnect", function()
         require("dap").disconnect()
         require("dapui").close()
@@ -51,21 +58,6 @@ return {
         },
       }
     end,
-    dependencies = {
-      "Weissle/persistent-breakpoints.nvim",
-      config = function()
-        require("persistent-breakpoints").setup({
-          load_breakpoints_event = { "BufReadPost" },
-        })
-
-        vim.keymap.set("n", "<leader>db", '<cmd>lua require"persistent-breakpoints.api".toggle_breakpoint()<CR>')
-        vim.keymap.set(
-          "n",
-          "<leader>dc",
-          '<cmd>lua require"persistent-breakpoints.api".set_conditional_breakpoint()<CR>'
-        )
-      end,
-    },
   },
 
   {
