@@ -17,8 +17,14 @@ return {
       end)
 
       vim.keymap.set("n", "<leader>du", '<cmd>lua require"dapui".toggle()<CR>')
+
       -- reset dap ui
-      vim.keymap.set("n", "<leader>dr", '<cmd>lua require"dapui".open({ reset = true })<CR>')
+      vim.keymap.set("n", "<leader>dr", function()
+        local dapui = require("dapui")
+        dapui.close()
+        dapui.open({ reset = true })
+      end)
+
       vim.keymap.set("n", "<leader>de", '<cmd>lua require"dapui".eval()<CR>')
 
       vim.keymap.set("n", "<leader>db", '<cmd>lua require"dap".toggle_breakpoint()<CR>')
