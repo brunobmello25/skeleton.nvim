@@ -16,3 +16,14 @@ git clone git@github.com:brunobmello25/skeleton.nvim.git # Clone it
 cd skeleton.nvim # cd into it
 
 ./install.sh # run install script
+
+# TODO: config rewrite
+
+- [ ] find files (including git ignored ones but exclude node modules)
+- [ ] find folders
+- [ ] lsp
+- [ ] debugging
+- [ ] harpoon
+- [ ] formatting (conform)
+- [ ] trouble... maybe?
+- [ ] have a way to maximize current buffer (like a toggle)
