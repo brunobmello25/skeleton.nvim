@@ -16,6 +16,7 @@ git clone git@github.com:brunobmello25/skeleton.nvim.git # Clone it
 cd skeleton.nvim # cd into it
 
 ./install.sh # run install script
+```
 
 # TODO: config rewrite
 
