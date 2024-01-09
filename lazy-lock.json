@@ -40,7 +40,6 @@
   "nvim-ts-autotag": { "branch": "main", "commit": "8515e48a277a2f4947d91004d9aa92c29fdc5e18" },
   "nvim-ts-context-commentstring": { "branch": "main", "commit": "1277b4a1f451b0f18c0790e1a7f12e1e5fdebfee" },
   "nvim-web-devicons": { "branch": "master", "commit": "3e24abe1ae66532135cec911562f553fe247cb56" },
-  "oil.nvim": { "branch": "master", "commit": "a128e6f75c6a71b7b9ac7ea663949a5209771cd5" },
   "open-browser.vim": { "branch": "master", "commit": "7d4c1d8198e889d513a030b5a83faa07606bac27" },
   "plantuml-previewer.vim": { "branch": "master", "commit": "1dd4d0f2b09cd80a217f76d82f93830dbbe689b3" },
   "plantuml-syntax": { "branch": "master", "commit": "845abb56dcd3f12afa6eb47684ef5ba3055802b8" },
