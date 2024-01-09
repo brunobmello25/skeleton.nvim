@@ -23,7 +23,11 @@ cd skeleton.nvim # cd into it
 - [ ] find folders
 - [ ] lsp
 - [ ] debugging
+- [ ] fugitive
+- [ ] marks access remap
 - [ ] harpoon
+- [ ] basic keymaps
+- [ ] basic sets
 - [ ] formatting (conform)
 - [ ] trouble... maybe?
 - [ ] have a way to maximize current buffer (like a toggle)
