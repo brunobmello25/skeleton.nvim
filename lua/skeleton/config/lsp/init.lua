@@ -24,7 +24,7 @@ function M.config()
     ensure_installed = {
       "eslint",
       "lua_ls",
-      "vtsls",
+      "tsserver",
       "jsonls",
       "bashls",
       "tailwindcss",

@@ -15,7 +15,7 @@ return {
 
     vim.opt.termguicolors = true
 
-    vim.opt.mouse = 'a'
+    vim.opt.mouse = "a"
 
     vim.opt.scrolloff = 8
 
@@ -32,5 +32,9 @@ return {
     vim.opt.foldlevel = 99
     vim.opt.fillchars = "fold: "
     vim.opt.foldmethod = "indent"
-  end
+
+    vim.g.netrw_fastbrowse = 2
+
+    vim.g.netrw_keepj = ""
+  end,
 }
