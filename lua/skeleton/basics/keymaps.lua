@@ -39,5 +39,7 @@ return {
 
     vim.keymap.set("n", "[q", "<cmd>cprevious<CR>")
     vim.keymap.set("n", "]q", "<cmd>cnext<CR>")
+
+    vim.keymap.set("n", "<leader>e", "<cmd>Ex<CR>")
   end,
 }
