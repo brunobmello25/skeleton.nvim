@@ -5,20 +5,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       -- customize ripgrep args
-      require('telescope').setup {
-        defaults = {
-          vimgrep_arguments = {
-            "rg",
-            "--color=never",
-            "--no-heading",
-            "--with-filename",
-            "--line-number",
-            "--column",
-            "--smart-case",
-            "--hidden",
-          },
-        }
-      }
+      require('telescope').setup()
 
       vim.keymap.set('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>",
         { desc = "Find files" })
