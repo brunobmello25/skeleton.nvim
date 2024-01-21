@@ -13,8 +13,6 @@ return {
           typescriptreact = { { "prettier", "prettierd" } },
           javascriptreact = { { "prettier", "prettierd" } },
 
-          rust = { "rustfmt" },
-
           go = { "gofmt", "goimports" },
 
           json = { "jq" },
