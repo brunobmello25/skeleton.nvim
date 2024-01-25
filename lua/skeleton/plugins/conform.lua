@@ -5,20 +5,16 @@ return {
       require("conform").setup({
         formatters_by_ft = {
           lua = { "stylua" },
-          -- Conform will run multiple formatters sequentially
-          python = { "isort", "black" },
-          -- Use a sub-list to run only the first available formatter
+
           javascript = { { "prettierd", "prettier" } },
           typescript = { { "prettier", "prettierd" } },
           typescriptreact = { { "prettier", "prettierd" } },
           javascriptreact = { { "prettier", "prettierd" } },
-
-          go = { "gofmt", "goimports" },
-
-          json = { "jq" },
           yaml = { "prettier", "prettierd" },
           html = { "prettier", "prettierd" },
           css = { "prettier", "prettierd" },
+
+          json = { "jq" },
         },
 
         format_on_save = {
