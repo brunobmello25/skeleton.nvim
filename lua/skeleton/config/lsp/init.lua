@@ -24,6 +24,7 @@ function M.config()
     ensure_installed = {
       "eslint",
       "lua_ls",
+      "gopls",
       "tsserver",
       "jsonls",
       "bashls",
@@ -46,7 +47,7 @@ function M.config()
 
   local codelldb_path = vim.fn.exepath("codelldb")
   local liblldb_path = require("mason-registry").get_package("codelldb"):get_install_path()
-    .. "/extension/lldb/lib/liblldb.so"
+      .. "/extension/lldb/lib/liblldb.so"
 
   rust_tools.setup({
     dap = {
