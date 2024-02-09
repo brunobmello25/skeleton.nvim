@@ -23,6 +23,9 @@ return {
           },
         },
       })
+
+      -- TODO: enable this when it's in main
+      -- vim.opt.foldtext = vim.treesitter.foldtext()
     end,
   },
 
