@@ -19,7 +19,7 @@ return {
       end
 
       local global_note = require("global-note")
-      global_note.setup()
+
       global_note.setup({
         additional_presets = {
           project_local = {
@@ -31,7 +31,12 @@ return {
 
             title = "Project note",
           },
-        }
+        },
+        post_open = function(bufnr, winnr)
+          vim.keymap.set('n', '<Esc>', function()
+            vim.api.nvim_win_close(winnr, true)
+          end, { buffer = bufnr, nowait = true })
+        end
       })
 
 

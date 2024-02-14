@@ -12,7 +12,7 @@
   "fzf": { "branch": "master", "commit": "da752fc9a4b3cb9dd08cc80614a491f980436b46" },
   "git-blame.nvim": { "branch": "master", "commit": "196602b570b1d754b7b8f9a9f75fa7bd88f12ef8" },
   "gitsigns.nvim": { "branch": "main", "commit": "300a306da9973e81c2c06460f71fd7a079df1f36" },
-  "global-note.nvim": { "branch": "main", "commit": "ec57a6f57c04a464d5e39dbd312829cf2aa51e92" },
+  "global-note.nvim": { "branch": "main", "commit": "1e0d4bba425d971ed3ce40d182c574a25507115c" },
   "guess-indent.nvim": { "branch": "main", "commit": "b8ae749fce17aa4c267eec80a6984130b94f80b2" },
   "harpoon": { "branch": "harpoon2", "commit": "2cd4e03372f7ee5692c8caa220f479ea07970f17" },
   "lazy.nvim": { "branch": "main", "commit": "aedcd79811d491b60d0a6577a9c1701063c2a609" },
