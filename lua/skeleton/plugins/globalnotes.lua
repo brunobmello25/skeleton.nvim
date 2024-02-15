@@ -32,11 +32,11 @@ return {
             title = "Project note",
           },
         },
-        post_open = function(bufnr, winnr)
-          vim.keymap.set('n', '<Esc>', function()
-            vim.api.nvim_win_close(winnr, true)
-          end, { buffer = bufnr, nowait = true })
-        end
+        -- post_open = function(bufnr, winnr)
+        --   vim.keymap.set('n', '<Esc>', function()
+        --     vim.api.nvim_win_close(winnr, true)
+        --   end, { buffer = bufnr, nowait = true })
+        -- end
       })
 
 
