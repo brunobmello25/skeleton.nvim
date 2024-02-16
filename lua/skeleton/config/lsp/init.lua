@@ -20,6 +20,7 @@ function M.config()
 
   require("skeleton.config.lsp.cmp").setup()
 
+  require("mason").setup()
   require("mason-lspconfig").setup({
     ensure_installed = {
       "eslint",
