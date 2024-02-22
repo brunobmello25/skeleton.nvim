@@ -8,7 +8,7 @@ return {
             width = 1,
           },
         })
-      end)
+      end, { desc = "Toggle zen mode" })
     end,
   },
 }

@@ -14,11 +14,13 @@ return {
 
       vim.keymap.set("n", "<leader>ha", function()
         harpoon:list():append()
-      end)
+      end, { desc = "Add current file to harpoon" })
 
       vim.keymap.set("n", "<leader>hh", function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
-      end)
+      end, {
+        desc = "Toggle harpoon quick menu"
+      })
 
       local function set_navigation(number)
         vim.keymap.set("n", "<leader>" .. number, function()

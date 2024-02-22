@@ -59,9 +59,11 @@ function M.config()
         require("skeleton.config.lsp.keymaps").setup(client, bufnr)
 
         -- Hover actions
-        vim.keymap.set("n", "<leader><leader>.", rust_tools.hover_actions.hover_actions, { buffer = bufnr })
+        vim.keymap.set("n", "<leader><leader>.", rust_tools.hover_actions.hover_actions,
+          { buffer = bufnr, desc = "Rust tools hover actions" })
         -- Code action groups
-        vim.keymap.set("n", "<Leader>.", rust_tools.code_action_group.code_action_group, { buffer = bufnr })
+        vim.keymap.set("n", "<Leader>.", rust_tools.code_action_group.code_action_group,
+          { buffer = bufnr, desc = "Rust tools code action group" })
       end,
     },
   })

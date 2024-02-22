@@ -23,7 +23,7 @@ return {
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
     config = function()
       require("todo-comments").setup({})
-      vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<CR>')
+      vim.keymap.set('n', '<leader>ft', '<cmd>TodoTelescope<CR>', { desc = "Search for TODOs" })
     end
   },
 
@@ -58,7 +58,8 @@ return {
         }
       })
 
-      vim.keymap.set('n', '<leader>fy', "<cmd>lua require('telescope').extensions.neoclip.neoclip()<cr>")
+      vim.keymap.set('n', '<leader>fy', "<cmd>lua require('telescope').extensions.neoclip.neoclip()<cr>",
+        { desc = "List yanked items" })
     end
   }
 }
