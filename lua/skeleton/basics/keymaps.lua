@@ -42,5 +42,15 @@ return {
 
     vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = "Scroll down" })
     vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = "Scroll up" })
+
+    vim.keymap.set("n", "<leader>ln", function()
+      local relative_enabled = vim.opt.relativenumber:get()
+
+      if relative_enabled then
+        vim.opt.relativenumber = false
+      else
+        vim.opt.relativenumber = true
+      end
+    end, { desc = "Toggle relative line numbers" })
   end,
 }
