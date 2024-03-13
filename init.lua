@@ -9,5 +9,5 @@ require("lazy").setup('skeleton.plugins')
 require('skeleton.basics.sets').setup()
 require('skeleton.basics.keymaps').setup()
 
-require('skeleton.commands').setup()
+require('skeleton.commands')
 require('skeleton.config.snippets.go')
