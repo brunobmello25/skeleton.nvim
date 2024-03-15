@@ -12,3 +12,4 @@ require('skeleton.basics.keymaps').setup()
 require('skeleton.commands')
 require('skeleton.config.snippets.go')
 
+print("oi")
