@@ -112,7 +112,11 @@ return {
       "rcarriga/nvim-dap-ui",
     },
     config = function()
-      require("dap-go").setup()
+      require("dap-go").setup({
+        delve = {
+          build_flags = "-tags=dynamic"
+        }
+      })
     end,
   },
 
