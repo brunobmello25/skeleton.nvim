@@ -12,8 +12,6 @@ local c = ls.choice_node
 local fmta = require("luasnip.extras.fmt").fmta
 local rep = require("luasnip.extras").rep
 
-local fmt = require("luasnip.extras.fmt").fmt
-
 local ts_locals = require "nvim-treesitter.locals"
 local ts_utils = require "nvim-treesitter.ts_utils"
 
@@ -145,6 +143,7 @@ local go_ret_vals = function(args)
   )
 end
 
+
 ls.add_snippets("go", {
   s(
     "eif",
@@ -196,4 +195,3 @@ if <err_same> != nil {
 -- ls.add_snippets("go", {
 --   s("f", fmt("func {}({}) {} {{\n\t{}\n}}", { i(1, "name"), i(2), i(3), i(0) })),
 -- })
-
