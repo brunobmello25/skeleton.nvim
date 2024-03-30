@@ -15,6 +15,8 @@ return {
           css = { "prettier", "prettierd" },
 
           json = { "jq" },
+
+          python = { "black" },
         },
 
         format_on_save = {
