@@ -30,8 +30,8 @@ function M.config()
       "jsonls",
       "bashls",
       "tailwindcss",
-      "pylsp",
       "rust_analyzer",
+      "pyright"
     },
     handlers = {
       lsp.default_setup,
