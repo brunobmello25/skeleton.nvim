@@ -19,18 +19,6 @@ return {
           python = { "autopep8" },
         },
 
-        formatters = {
-          autopep8 = {
-            exe = "autopep8",
-            args = {
-              "--aggressive",
-              "--aggressive",
-              "--aggressive",
-              "$FILENAME"
-            },
-          },
-        },
-
         format_on_save = {
           lsp_fallback = true,
         },
