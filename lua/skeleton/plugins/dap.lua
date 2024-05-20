@@ -43,7 +43,7 @@ return {
       end, {})
 
       local node_debug_path = mason_registry.get_package("node-debug2-adapter"):get_install_path()
-          .. "/out/src/nodeDebug.js"
+        .. "/out/src/nodeDebug.js"
 
       dap.adapters.node2 = {
         type = "executable",
@@ -145,7 +145,6 @@ return {
       else
         path = "python"
       end
-      print('path chosen: ' .. path)
       dap_python.setup(path)
     end,
   },

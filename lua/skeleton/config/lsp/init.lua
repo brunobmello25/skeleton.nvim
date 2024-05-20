@@ -5,7 +5,7 @@ function M.config()
 
   local lsp = require("lsp-zero").preset({})
 
-  lsp.on_attach(function(client, bufnr)
+  local function on_attach(client, bufnr)
     require("skeleton.config.lsp.keymaps").setup(client, bufnr)
 
     if client.name == "eslint" then
@@ -14,6 +14,10 @@ function M.config()
       vim.cmd(string.format("autocmd BufWritePre <buffer=%s> EslintFixAll", bufnr))
       vim.cmd("augroup END")
     end
+  end
+
+  lsp.on_attach(function(client, bufnr)
+    on_attach(client, bufnr)
   end)
 
   lsp.setup()
@@ -48,7 +52,7 @@ function M.config()
 
   local codelldb_path = vim.fn.exepath("codelldb")
   local liblldb_path = require("mason-registry").get_package("codelldb"):get_install_path()
-      .. "/extension/lldb/lib/liblldb.so"
+    .. "/extension/lldb/lib/liblldb.so"
 
   rust_tools.setup({
     dap = {
@@ -66,6 +70,11 @@ function M.config()
           { buffer = bufnr, desc = "Rust tools code action group" })
       end,
     },
+  })
+
+  require('lspconfig').gdscript.setup({
+    on_attach = on_attach,
+    filetypes = { "gd", "gdscript", "gdscript3" },
   })
 end
 
