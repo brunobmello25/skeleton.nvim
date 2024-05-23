@@ -13,7 +13,7 @@ return {
       })
 
       vim.keymap.set("n", "<leader>ha", function()
-        harpoon:list():append()
+        harpoon:list():add()
       end, { desc = "Add current file to harpoon" })
 
       vim.keymap.set("n", "<leader>hh", function()
