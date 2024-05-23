@@ -72,8 +72,12 @@ function M.config()
     },
   })
 
-  require("lspconfig").gdscript.setup({
-    cmd = { "/home/brubs/dev/personal/godot-wsl-lsp/bin/godot-wsl-lsp", "--host", "192.168.0.217" },
+  require('lspconfig').gdscript.setup({
+    on_attach = function(client, bufnr)
+      require("skeleton.config.lsp.keymaps").setup(client, bufnr)
+    end,
+    -- capabilities = lsp.capabilities,
+    cmd = { "ncat", "localhost", os.getenv('GDScript_Port') or 6005 },
   })
 end
 
