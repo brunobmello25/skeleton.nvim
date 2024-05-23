@@ -73,7 +73,7 @@ function M.config()
   })
 
   require("lspconfig").gdscript.setup({
-    cmd = { "godot-wsl-lsp" },
+    cmd = { "/home/brubs/dev/personal/godot-wsl-lsp/bin/godot-wsl-lsp", "--host", "192.168.0.217" },
   })
 end
 
