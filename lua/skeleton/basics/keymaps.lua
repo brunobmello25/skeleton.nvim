@@ -15,7 +15,7 @@ return {
     vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv", { desc = "Move selected lines down" })
     vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { desc = "Move selected lines up" })
 
-    vim.keymap.set("n", "J", "mzJ`z", { desc = "Join lines" })
+    vim.keymap.set("n", "J", "mzJ`zdmz", { desc = "Join lines" })
 
     -- prevent yank when pasting from visual mode
     vim.keymap.set("x", "p", '"_dP', { desc = "Prevent yank when pasting" })
