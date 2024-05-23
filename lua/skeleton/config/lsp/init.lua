@@ -72,9 +72,8 @@ function M.config()
     },
   })
 
-  require('lspconfig').gdscript.setup({
-    on_attach = on_attach,
-    filetypes = { "gd", "gdscript", "gdscript3" },
+  require("lspconfig").gdscript.setup({
+    cmd = { "godot-wsl-lsp" },
   })
 end
 
