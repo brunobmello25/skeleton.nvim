@@ -17,6 +17,8 @@ return {
           json = { "jq" },
 
           python = { "autopep8" },
+
+          gdscript = { "gdformat" },
         },
 
         format_on_save = {
