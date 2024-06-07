@@ -6,6 +6,16 @@ return {
     config = function()
       -- customize ripgrep args
       require('telescope').setup()
+      local builtin = require('telescope.builtin')
+
+      function SearchInCurrentDir()
+        -- Get the current directory of the active buffer
+        local current_dir = vim.fn.expand('%:p:h')
+        -- Use Telescope's live_grep to search in the current directory
+        builtin.live_grep({
+          search_dirs = { current_dir }
+        })
+      end
 
       vim.keymap.set('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files()<CR>", { desc = "Find files" })
       vim.keymap.set('n', '<leader>fF', "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<CR>",
@@ -16,6 +26,9 @@ return {
       vim.keymap.set('n', '<leader>fq', '<cmd>Telescope quickfix<cr>', { desc = 'List items in the quickfix list' })
       vim.keymap.set('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', { desc = 'List help tags' })
       vim.keymap.set('n', '<leader>fm', '<cmd>Telescope marks<cr>', { desc = 'List marks' })
+      vim.keymap.set('n', '<leader>fcd', function()
+        SearchInCurrentDir()
+      end, { desc = 'Search in current directory' })
     end
   },
 
