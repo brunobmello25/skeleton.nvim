@@ -43,7 +43,7 @@ return {
     vim.keymap.set('n', '<C-d>', '<C-d>zz', { desc = "Scroll down" })
     vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = "Scroll up" })
 
-    vim.keymap.set("n", '<leader>opr', "<cmd>!openpr<CR>", { desc = "Open PR" })
+    vim.keymap.set("n", '<leader>pro', "<cmd>silent !openpr<CR>", { desc = "Open PR" })
 
     vim.keymap.set("n", "<leader>rln", function()
       local relative_enabled = vim.opt.relativenumber:get()
