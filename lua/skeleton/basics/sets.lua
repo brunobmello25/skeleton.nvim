@@ -39,5 +39,7 @@ return {
 
     -- undo file
     vim.opt.undofile = true
+
+    vim.o.timeoutlen = 200
   end,
 }

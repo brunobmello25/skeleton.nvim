@@ -24,4 +24,21 @@ return {
       end, { desc = "Accept Copilot suggestion" })
     end
   },
+
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    branch = "canary",
+    dependencies = {
+      { "zbirenbaum/copilot.lua" },
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    config = function()
+      require('CopilotChat').setup({
+        -- debug=true,
+      })
+
+      vim.keymap.set('n', '<leader>cc', '<cmd>CopilotChat<CR>',
+        { noremap = true, silent = true, desc = "Open Copilot Chat" })
+    end,
+  },
 }
