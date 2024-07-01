@@ -6,8 +6,8 @@ require('skeleton.bootstrap').run()
 
 require("lazy").setup('skeleton.plugins')
 
-require('skeleton.basics.sets').setup()
-require('skeleton.basics.keymaps').setup()
+require('skeleton.basics.sets')
+require('skeleton.basics.keymaps')
 
 require('skeleton.commands')
 require('skeleton.config.snippets.go')
