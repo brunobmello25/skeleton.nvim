@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 require('skeleton.globals')
 
-require('skeleton.bootstrap').run()
+require('skeleton.bootstrap')
 
 require("lazy").setup('skeleton.plugins')
 
